@@ -1,0 +1,43 @@
+C:\Hao's Code\OASIS V1.1\Oasis v1.1\Oasis v1.1\bin\Debug\Oasis v1.1.exe.config
+C:\Hao's Code\OASIS V1.1\Oasis v1.1\Oasis v1.1\bin\Debug\Oasis v1.1.exe
+C:\Hao's Code\OASIS V1.1\Oasis v1.1\Oasis v1.1\bin\Debug\Oasis v1.1.pdb
+C:\Hao's Code\OASIS V1.1\Oasis v1.1\Oasis v1.1\obj\Debug\Oasis_v1._1.Properties.Resources.resources
+C:\Hao's Code\OASIS V1.1\Oasis v1.1\Oasis v1.1\obj\Debug\Oasis v1.1.csproj.GenerateResource.Cache
+C:\Hao's Code\OASIS V1.1\Oasis v1.1\Oasis v1.1\obj\Debug\Oasis v1.1.exe
+C:\Hao's Code\OASIS V1.1\Oasis v1.1\Oasis v1.1\obj\Debug\Oasis v1.1.pdb
+C:\Hao's Code\OASIS V1.1\Oasis v1.1\Oasis v1.1\obj\Debug\Oasis_v1._1.MainWin.resources
+C:\Hao's Code\OASIS V1.1\Oasis v1.1\Oasis v1.1\bin\Debug\SharpMap.dll
+C:\Hao's Code\OASIS V1.1\Oasis v1.1\Oasis v1.1\bin\Debug\SharpMap.UI.dll
+C:\Hao's Code\OASIS V1.1\Oasis v1.1\Oasis v1.1\bin\Debug\WeifenLuo.WinFormsUI.Docking.dll
+C:\Hao's Code\OASIS V1.1\Oasis v1.1\Oasis v1.1\bin\Debug\GeoAPI.dll
+C:\Hao's Code\OASIS V1.1\Oasis v1.1\Oasis v1.1\bin\Debug\Common.Logging.dll
+C:\Hao's Code\OASIS V1.1\Oasis v1.1\Oasis v1.1\bin\Debug\BruTile.dll
+C:\Hao's Code\OASIS V1.1\Oasis v1.1\Oasis v1.1\bin\Debug\BruTile.Desktop.dll
+C:\Hao's Code\OASIS V1.1\Oasis v1.1\Oasis v1.1\bin\Debug\ProjNet.dll
+C:\Hao's Code\OASIS V1.1\Oasis v1.1\Oasis v1.1\bin\Debug\NetTopologySuite.dll
+C:\Hao's Code\OASIS V1.1\Oasis v1.1\Oasis v1.1\obj\Debug\Oasis v1.1.csprojResolveAssemblyReference.cache
+C:\Hao's Code\OASIS V1.1\Oasis v1.1\Oasis v1.1\bin\Debug\Pan.Docks.dll
+C:\Hao's Code\OASIS V1.1\Oasis v1.1\Oasis v1.1\bin\Debug\Pan.Docks.pdb
+C:\Hao's Code\OASIS V1.1\Oasis v1.1\Oasis v1.1\obj\Debug\Oasis_v1._1.fmMap.resources
+C:\Hao's Code\OASIS V1.1\Oasis v1.1\Oasis v1.1\obj\Debug\Oasis_v1._1.fmDatabase.resources
+C:\Hao's Code\OASIS V1.1\Oasis v1.1\Oasis v1.1\bin\Debug\Npgsql.dll
+C:\Hao's Code\OASIS V1.1\Oasis v1.1\Oasis v1.1\bin\Debug\Mono.Security.dll
+C:\Hao's Code\OASIS V1.1\Oasis v1.1\Oasis v1.1\bin\Debug\Pan.Diagrammer.dll
+C:\Hao's Code\OASIS V1.1\Oasis v1.1\Oasis v1.1\bin\Debug\Dataweb.NShape.dll
+C:\Hao's Code\OASIS V1.1\Oasis v1.1\Oasis v1.1\bin\Debug\Dataweb.NShape.GeneralShapes.dll
+C:\Hao's Code\OASIS V1.1\Oasis v1.1\Oasis v1.1\bin\Debug\Dataweb.NShape.WinFormsUI.dll
+C:\Hao's Code\OASIS V1.1\Oasis v1.1\Oasis v1.1\bin\Debug\Pan.Utilities.dll
+C:\Hao's Code\OASIS V1.1\Oasis v1.1\Oasis v1.1\bin\Debug\protobuf-net.dll
+C:\Hao's Code\OASIS V1.1\Oasis v1.1\Oasis v1.1\bin\Debug\Pan.Diagrammer.pdb
+C:\Hao's Code\OASIS V1.1\Oasis v1.1\Oasis v1.1\bin\Debug\Pan.Utilities.pdb
+C:\Hao's Code\OASIS V1.1\Oasis v1.1\Oasis v1.1\obj\Debug\Oasis_v1._1.fmNode.resources
+C:\Hao's Code\OASIS V1.1\Oasis v1.1\Oasis v1.1\obj\Debug\Oasis_v1._1.fmConsole.resources
+C:\Hao's Code\OASIS V1.1\Oasis v1.1\Oasis v1.1\obj\Debug\Oasis_v1._1.fmLink.resources
+C:\Hao's Code\OASIS V1.1\Oasis v1.1\Oasis v1.1\obj\Debug\Oasis_v1._1.fmDiagram.resources
+C:\Hao's Code\OASIS V1.1\Oasis v1.1\Oasis v1.1\bin\Debug\Pan.Settings.dll
+C:\Hao's Code\OASIS V1.1\Oasis v1.1\Oasis v1.1\bin\Debug\Pan.Settings.pdb
+C:\Hao's Code\OASIS V1.1\Oasis v1.1\Oasis v1.1\obj\Debug\Oasis_v1._1.fmSetting.resources
+C:\Hao's Code\OASIS V1.1\Oasis v1.1\Oasis v1.1\bin\Debug\NetTopologySuite.IO.PostGis.dll
+C:\Hao's Code\OASIS V1.1\Oasis v1.1\Oasis v1.1\bin\Debug\ObjectListView.dll
+C:\Hao's Code\OASIS V1.1\Oasis v1.1\Oasis v1.1\bin\Debug\ObjectListView.pdb
+C:\Hao's Code\OASIS V1.1\Oasis v1.1\Oasis v1.1\bin\Debug\ObjectListView.xml

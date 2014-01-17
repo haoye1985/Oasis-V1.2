@@ -1,0 +1,240 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{FB3CB2B2-55F7-4CEF-AD68-826AFED7AB3B}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Oasis_v1._1</RootNamespace>
+    <AssemblyName>Oasis v1.1</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="BruTile, Version=0.7.4.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\References\BruTile.dll</HintPath>
+    </Reference>
+    <Reference Include="BruTile.Desktop, Version=0.7.4.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\References\BruTile.Desktop.dll</HintPath>
+    </Reference>
+    <Reference Include="Common.Logging, Version=2.0.0.0, Culture=neutral, PublicKeyToken=af08829b84f0328e, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\References\Common.Logging.dll</HintPath>
+    </Reference>
+    <Reference Include="Dataweb.NShape, Version=1.0.8.0, Culture=neutral, PublicKeyToken=1512080cd664963c, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\References\Dataweb.NShape.dll</HintPath>
+    </Reference>
+    <Reference Include="Dataweb.NShape.GeneralShapes, Version=1.0.8.0, Culture=neutral, PublicKeyToken=1512080cd664963c, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\References\Dataweb.NShape.GeneralShapes.dll</HintPath>
+    </Reference>
+    <Reference Include="GeoAPI, Version=1.7.1.0, Culture=neutral, PublicKeyToken=a1a0da7def465678, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\References\GeoAPI.dll</HintPath>
+    </Reference>
+    <Reference Include="NetTopologySuite, Version=1.13.0.0, Culture=neutral, PublicKeyToken=f580a05016ebada1, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\References\NetTopologySuite.dll</HintPath>
+    </Reference>
+    <Reference Include="NetTopologySuite.IO.PostGis">
+      <HintPath>..\References\NetTopologySuite.IO.PostGis.dll</HintPath>
+    </Reference>
+    <Reference Include="Npgsql">
+      <HintPath>..\References\Npgsql.dll</HintPath>
+    </Reference>
+    <Reference Include="ObjectListView">
+      <HintPath>..\References\ObjectListView.dll</HintPath>
+    </Reference>
+    <Reference Include="ProjNet, Version=1.3.0.1, Culture=neutral, PublicKeyToken=a1f5bdcd9c6f5740, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\References\ProjNet.dll</HintPath>
+    </Reference>
+    <Reference Include="SharpMap">
+      <HintPath>..\References\SharpMap.dll</HintPath>
+    </Reference>
+    <Reference Include="SharpMap.UI">
+      <HintPath>..\References\SharpMap.UI.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="WeifenLuo.WinFormsUI.Docking">
+      <HintPath>..\References\WeifenLuo.WinFormsUI.Docking.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Helpers\DataGridViewHelper.cs" />
+    <Compile Include="Functions\Geospatial.cs" />
+    <Compile Include="Helpers\ControlHelper.cs" />
+    <Compile Include="Database\DBConnection.cs" />
+    <Compile Include="Forms\fmSetting.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\fmSetting.Designer.cs">
+      <DependentUpon>fmSetting.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\fmDiagram.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\fmDiagram.Designer.cs">
+      <DependentUpon>fmDiagram.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\fmConsole.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\fmConsole.Designer.cs">
+      <DependentUpon>fmConsole.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\fmLink.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\fmLink.Designer.cs">
+      <DependentUpon>fmLink.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Network\InfraNetworks.cs" />
+    <Compile Include="Network\Network Tools\DrawNetwork.cs" />
+    <Compile Include="Forms\fmDatabase.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\fmDatabase.Designer.cs">
+      <DependentUpon>fmDatabase.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\fmMap.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\fmMap.Designer.cs">
+      <DependentUpon>fmMap.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Forms.cs" />
+    <Compile Include="Helpers\LayerHelper.cs" />
+    <Compile Include="Forms\fmMainWin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\fmMainWin.Designer.cs">
+      <DependentUpon>fmMainWin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Network\Network Tools\NetworkVisualiser.cs" />
+    <Compile Include="Network\InfraNetwork.cs" />
+    <Compile Include="Network\InfraLink.cs" />
+    <Compile Include="Network\InfraNode.cs" />
+    <Compile Include="Forms\fmNode.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\fmNode.Designer.cs">
+      <DependentUpon>fmNode.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Database\PostGIS.cs" />
+    <Compile Include="Database\PostGisHelper.cs" />
+    <Compile Include="Database\PostGisMetaItem.cs" />
+    <Compile Include="Functions\Program.cs" />
+    <Compile Include="Helpers\ProjectionHelper.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Network\States.cs" />
+    <Compile Include="Functions\Setting.cs" />
+    <Compile Include="Functions\ZoomExtent.cs" />
+    <EmbeddedResource Include="Forms\fmSetting.resx">
+      <DependentUpon>fmSetting.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\fmConsole.resx">
+      <DependentUpon>fmConsole.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\fmDatabase.resx">
+      <DependentUpon>fmDatabase.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\fmDiagram.resx">
+      <DependentUpon>fmDiagram.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\fmMap.resx">
+      <DependentUpon>fmMap.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\fmMainWin.resx">
+      <DependentUpon>fmMainWin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\fmNode.resx">
+      <DependentUpon>fmNode.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\fmLink.resx">
+      <DependentUpon>fmLink.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <None Include="ClassDiagram1.cd" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Functions\App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Pan\Pan.Diagramer\Pan.Diagramer.csproj">
+      <Project>{fc042f47-3373-4524-806c-95f6c93bbd08}</Project>
+      <Name>Pan.Diagramer</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Pan\Pan.Docks\Pan.Docks.csproj">
+      <Project>{d678aef8-5303-4d8a-9756-51a7db0c6a5b}</Project>
+      <Name>Pan.Docks</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Pan\Pan.Settings\Pan.Settings.csproj">
+      <Project>{1346e36d-d5e1-478a-8980-badaefa565f4}</Project>
+      <Name>Pan.Settings</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Pan\Pan.Utilities\Pan.Utilities.csproj">
+      <Project>{80d631d2-4a4a-41ce-a11d-92e735422d8b}</Project>
+      <Name>Pan.Utilities</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
