@@ -16,7 +16,7 @@ namespace Oasis_v1._1
 {
     public partial class MainWin : Form
     {
-        private DrawNetwork dl;
+        private NetworkDesign dl;
         private TileAsyncLayer tileLayer = new TileAsyncLayer(new GoogleTileSource(GoogleMapType.GoogleMap), "TileLayer - Google");
 
         public MainWin()
@@ -148,13 +148,11 @@ namespace Oasis_v1._1
             {
                 if (!(nodeCreationToolStripMenuItem.Enabled && linkCreationToolStripMenuItem.Enabled))
                 {
-                    dl = new DrawNetwork(Forms.dockMap.mapBox1);
+                    fmNetworkCreation networkCreation = new fmNetworkCreation();
+                    networkCreation.Show();
 
+                    dl = new NetworkDesign(Forms.dockMap.mapBox1);
                     Forms.dockMap.lblMainStatus.Text = "Network Builder Mode";    
-                    nodeCreationToolStripMenuItem.Enabled = true;
-                    linkCreationToolStripMenuItem.Enabled = true;
-                    checkNetworkFeaturesToolStripMenuItem.Enabled = true;
-                    tsBuilderMap.Enabled = true;
 
                     Forms.dockDiagram.pDiagram1.Init();
                     Forms.dockDiagram.pDiagram1.FinalizeDiagram();
@@ -220,6 +218,20 @@ namespace Oasis_v1._1
             private void toolStripButton6_Click(object sender, EventArgs e)
             {
 
+            }
+
+            private void featureConnectivityAnalysisToolStripMenuItem_Click(object sender, EventArgs e)
+            {
+                NetworkAnalysis na = new NetworkAnalysis(States.Network);
+
+                if (na.IsAllConnected())
+                {
+                    MessageBox.Show("The entire network is connected!");
+                }
+                else
+                {
+                    MessageBox.Show("the entire netwokr is not connected, the connected links");
+                }
             }
 
     }

@@ -758,6 +758,7 @@ namespace Oasis_v1._1
                     }
                     catch (Exception ee)
                     {
+                        MessageBox.Show(ee.ToString());
                     }
                 }
                 throw new ApplicationException("Table '" + Table + "' does not contain a geometry column");

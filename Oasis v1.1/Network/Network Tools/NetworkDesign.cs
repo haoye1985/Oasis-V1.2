@@ -16,7 +16,7 @@ using GeoAPI.CoordinateSystems.Transformations;
 
 namespace Oasis_v1._1
 {
-    public class DrawNetwork
+    public class NetworkDesign
     {
         #region Fields
 
@@ -25,13 +25,13 @@ namespace Oasis_v1._1
         private PointF p2;
         public Graphics p;
         private TileAsyncLayer tileLayer = new TileAsyncLayer(new GoogleTileSource(GoogleMapType.GoogleMap), "TileLayer - Google");
-        private List<Coordinate> _pointArray = new List<Coordinate>();
+        private List<Coordinate> _pointArray = new List<Coordinate>(2);
 
         #endregion
 
         #region Constructor
 
-        public DrawNetwork(MapBox mapbox)
+        public NetworkDesign(MapBox mapbox)
         {
             _pointArray = new List<Coordinate>(2);
             _mapbox = mapbox;
@@ -47,53 +47,42 @@ namespace Oasis_v1._1
 
         public void OnMouseDown(Coordinate coordinate, MouseEventArgs e)
         {
+            Coordinate tempCoord = coordinate;
+
             if (Forms.dockMain.nodeCreationToolStripMenuItem.Checked)
-            {
-                // add infranode onto map
-                _mapbox.Cursor = Cursors.Cross;
-                InfraNode node = new InfraNode(coordinate);
-                States.Network.AddNode(node);
+                ObjectCreation.AddNode(_mapbox, coordinate, e.Location);
 
-                // add infranode onto diagram
-                Forms.dockDiagram.pDiagram1.AddRectangle(e.X, e.Y);
-
-                // add infranode information to other controls
-                ControlHelper.AddNetworkNode(Forms.dockNode.dataGridViewPersistent1, node);
-                _mapbox.Invalidate();
-            }
-            else if (Forms.dockMain.linkCreationToolStripMenuItem.Checked)
+            if (Forms.dockMain.linkCreationToolStripMenuItem.Checked)
             {
                 _mapbox.Cursor = Cursors.Cross;
-
-                _pointArray.Add(coordinate);
-                _pointArray.Add(coordinate);
-
-                /*
-                if (States.Network.InfraNodes.Count > 0)
+                if (States.Network.IsNodeCollectionEmpty())
+                {
+                    _pointArray.Clear();
+                    _pointArray.Add(coordinate);
+                    _pointArray.Add(coordinate);
+                }
+                else
                 {
                     foreach (var node in States.Network.InfraNodes)
                     {
                         if (node.EnvelopeContains(coordinate))
                         {
+                            _pointArray.Clear();
                             _pointArray.Add(node.Coordinate);
                             _pointArray.Add(node.Coordinate);
                         }
+                        else
+                        {
+                            _pointArray.Clear();
+                            _pointArray.Add(coordinate);
+                            _pointArray.Add(coordinate);
+                        }
                     }
                 }
-                else
-                {
-                    _pointArray.Add(coordinate);
-                    _pointArray.Add(coordinate);
-                }
-                 */
+                
                 _mapbox.Invalidate();
             }
 
-
-        }
-
-        public void OnMouseDrag(Coordinate coordinate, MouseEventArgs e)
-        {
 
         }
 
@@ -113,24 +102,47 @@ namespace Oasis_v1._1
         {
             if (Forms.dockMain.linkCreationToolStripMenuItem.Checked)
             {
-                if (_pointArray.Count == 2)
+                if (States.Network.IsNodeCollectionEmpty())
                 {
-                    _pointArray[_pointArray.Count - 1] = coordinate;
-                    p1 = _mapbox.Map.WorldToImage(_pointArray[0]);
-                    p2 = _mapbox.Map.WorldToImage(_pointArray[1]);
-                    InfraLink link = new InfraLink(_pointArray[0], _pointArray[1]);
-                    States.Network.AddLink(link);
-
-                    PointF centroid = _mapbox.Map.WorldToImage(link.Line.Centroid.Coordinate);
-                    Forms.dockDiagram.pDiagram1.AddRectangle((int)centroid.X, (int)centroid.Y);
-
-                    // add infralink information to other controls
-                    ControlHelper.AddNetworkLink(Forms.dockLink.dataGridViewPersistent1, link);
-                    _mapbox.Invalidate();
-
-                    _mapbox.Invalidate();
+                    if (_pointArray.Count == 2)
+                    {
+                        _pointArray[_pointArray.Count - 1] = coordinate;
+                        p1 = _mapbox.Map.WorldToImage(_pointArray[0]);
+                        p2 = _mapbox.Map.WorldToImage(_pointArray[1]);
+                        ObjectCreation.AddLink(_mapbox, _pointArray[0], _pointArray[1]);
+                        _pointArray.Clear();
+                    }
                 }
-                _pointArray.Clear();
+                else
+                {
+                    foreach (var node in States.Network.InfraNodes)
+                    {
+                        if (node.EnvelopeContains(coordinate))
+                        {
+                            if (_pointArray.Count == 2)
+                            {
+                                _pointArray[_pointArray.Count - 1] = node.Coordinate;
+                                p1 = _mapbox.Map.WorldToImage(_pointArray[0]);
+                                p2 = _mapbox.Map.WorldToImage(_pointArray[1]);
+                                ObjectCreation.AddLink(_mapbox, _pointArray[0], _pointArray[1]);
+                                _pointArray.Clear();
+                            }
+                        }
+                        else
+                        {
+                            if (_pointArray.Count == 2)
+                            {
+                                _pointArray[_pointArray.Count - 1] = coordinate;
+                                p1 = _mapbox.Map.WorldToImage(_pointArray[0]);
+                                p2 = _mapbox.Map.WorldToImage(_pointArray[1]);
+                                ObjectCreation.AddLink(_mapbox, _pointArray[0], _pointArray[1]);
+                                _pointArray.Clear();
+                            }
+                        }
+                    }
+ 
+                }
+
             }
         }
 
@@ -155,7 +167,7 @@ namespace Oasis_v1._1
                 p.DrawLine(new Pen(Color.Green, 1F), p1, p2);
             }
 
-            if (States.Network.InfraNodes.Count > 0 || States.Network.InfraLinks.Count > 0)
+            if (!States.Network.IsCollectionEmpty())
             {
                 NetworkVisualiser.DrawNetwork(p, _mapbox.Map, States.Network);
             }

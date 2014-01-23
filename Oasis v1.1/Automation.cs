@@ -6,9 +6,12 @@ using System.Threading.Tasks;
 
 namespace Oasis_v1._1
 {
-    public class InfraNetworks
+    public class Automation
     {
-        public List<InfraNetwork> networks = new List<InfraNetwork>();
+
+
+
+
 
     }
 }

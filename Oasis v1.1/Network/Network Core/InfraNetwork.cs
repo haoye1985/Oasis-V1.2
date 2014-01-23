@@ -9,6 +9,11 @@ namespace Oasis_v1._1
 {
     public class InfraNetwork
     {
+        private string _networkID;
+        private string _networkName;
+        private NetworkType _networkType = NetworkType.Default_Network;
+        private double expansionFactor;
+
         private List<InfraNode> _infraNodes;
         private List<InfraLink> _infraLinks;
 
@@ -26,6 +31,15 @@ namespace Oasis_v1._1
         }
 
         #endregion
+
+        public string GenerateID()
+        {
+            return Guid.NewGuid().ToString();
+        }
+
+
+
+
 
         private void Initialise()
         {
@@ -51,6 +65,21 @@ namespace Oasis_v1._1
         }
 
         #region Methods
+
+        public bool IsCollectionEmpty()
+        {
+            return InfraLinks.Count == 0 && InfraNodes.Count == 0;
+        }
+
+        public bool IsNodeCollectionEmpty()
+        {
+            return _infraNodes.Count == 0;
+        }
+
+        public bool IsLinkCollectionEmpty()
+        {
+            return _infraLinks.Count == 0;
+        }
 
         public void AddNode(InfraNode node)
         {
@@ -94,6 +123,30 @@ namespace Oasis_v1._1
         #endregion
 
         #region Properties
+
+        public string NetworkID
+        {
+            get { return _networkID; }
+            set { _networkID = value; }
+        }
+
+        public string NetworkName
+        {
+            get { return _networkName; }
+            set { _networkName = value; }
+        }
+
+        public NetworkType NetworkWorkingType
+        {
+            get { return _networkType; }
+            set { _networkType = value; }
+        }
+
+        public double ExpansionFactor
+        {
+            get { return expansionFactor; }
+            set { expansionFactor = value; }
+        }
 
         public List<InfraNode> InfraNodes
         {

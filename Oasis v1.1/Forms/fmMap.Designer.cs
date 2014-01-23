@@ -30,11 +30,11 @@
         {
             this.mapBox1 = new SharpMap.Forms.MapBox();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
+            this.lblMainStatus = new System.Windows.Forms.ToolStripLabel();
+            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.txtCoordinate = new System.Windows.Forms.ToolStripLabel();
             this.stripCoordinate = new System.Windows.Forms.ToolStripLabel();
             this.toolStripLabel1 = new System.Windows.Forms.ToolStripLabel();
-            this.lblMainStatus = new System.Windows.Forms.ToolStripLabel();
-            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -75,6 +75,19 @@
             this.toolStrip1.TabIndex = 1;
             this.toolStrip1.Text = "toolStrip1";
             // 
+            // lblMainStatus
+            // 
+            this.lblMainStatus.Font = new System.Drawing.Font("Arial", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblMainStatus.ForeColor = System.Drawing.Color.Red;
+            this.lblMainStatus.Name = "lblMainStatus";
+            this.lblMainStatus.Size = new System.Drawing.Size(53, 22);
+            this.lblMainStatus.Text = "status ";
+            // 
+            // toolStripSeparator1
+            // 
+            this.toolStripSeparator1.Name = "toolStripSeparator1";
+            this.toolStripSeparator1.Size = new System.Drawing.Size(6, 25);
+            // 
             // txtCoordinate
             // 
             this.txtCoordinate.Font = new System.Drawing.Font("Arial", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -96,18 +109,6 @@
             this.toolStripLabel1.Name = "toolStripLabel1";
             this.toolStripLabel1.Size = new System.Drawing.Size(54, 22);
             this.toolStripLabel1.Text = "EPSG";
-            // 
-            // lblMainStatus
-            // 
-            this.lblMainStatus.Font = new System.Drawing.Font("Arial", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblMainStatus.Name = "lblMainStatus";
-            this.lblMainStatus.Size = new System.Drawing.Size(53, 22);
-            this.lblMainStatus.Text = "status ";
-            // 
-            // toolStripSeparator1
-            // 
-            this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(6, 25);
             // 
             // fmMap
             // 

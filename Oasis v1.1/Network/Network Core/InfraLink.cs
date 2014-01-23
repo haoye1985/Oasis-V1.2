@@ -24,7 +24,7 @@ namespace Oasis_v1._1
 
         private IPoint _endPoint;
 
-        private IPoint _centroid;
+        //private IPoint _centroid;
 
         private GeometryFactory factory = new GeometryFactory();
 
@@ -39,6 +39,18 @@ namespace Oasis_v1._1
         private List<IGeometry> _linkSegment = new List<IGeometry>();
 
         private ILineString _lineSegment;
+
+        public InfraNode FromNode { get; set; }
+
+        public InfraNode ToNode { get; set; }
+
+        public float RiskAij{get; set;}
+
+        public bool FromNodeConnected { get; set; }
+
+        public bool ToNodeConnected { get; set; }
+
+        public bool LinkConnected { get; set; }
 
         #endregion
 
@@ -77,6 +89,9 @@ namespace Oasis_v1._1
             coordinates[0] = _startPoint.Coordinate;
             coordinates[1] = _endPoint.Coordinate;
 
+            FromNode = new InfraNode(_startPoint.Coordinate);
+            ToNode = new InfraNode(_endPoint.Coordinate);
+
             _hitTestStartZone = new Envelope(_startPoint.Coordinate);
             _hitTestEndZone = new Envelope(_endPoint.Coordinate);
 
@@ -114,6 +129,7 @@ namespace Oasis_v1._1
         #endregion
 
         #region Properties
+
 
         public IPoint StartPoint
         {

@@ -15,7 +15,6 @@ namespace Oasis_v1._1
 {
     public partial class fmDiagram : DockContent
     {
-        private Diagram diagram;
 
         public fmDiagram()
         {

@@ -13,13 +13,17 @@ namespace Oasis_v1._1
     {
         #region Fields
 
-            private readonly double expansionFactor = 1.0;
+            private double expansionFactor = 30.0;
           
             private IPoint _point;
             private Coordinate _coordinate;
             private GeometryFactory factory = new GeometryFactory();
             private Envelope _hitTestZone = new Envelope();
             private bool _isSelected;
+
+            public float RiskXi { get; set; }
+
+            public float RiskCi { get; set; }
 
             private int _ID;
             private string _nodeName = "NodeName";
@@ -70,6 +74,12 @@ namespace Oasis_v1._1
         {
             get { return _nodeName; }
             set { _nodeName = value; }
+        }
+
+        public double ExpansionFactor
+        {
+            get { return expansionFactor; }
+            set { expansionFactor = value; }
         }
 
         public Coordinate Coordinate

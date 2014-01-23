@@ -41,3 +41,4 @@ C:\Hao's Code\OASIS V1.1\Oasis v1.1\Oasis v1.1\bin\Debug\NetTopologySuite.IO.Pos
 C:\Hao's Code\OASIS V1.1\Oasis v1.1\Oasis v1.1\bin\Debug\ObjectListView.dll
 C:\Hao's Code\OASIS V1.1\Oasis v1.1\Oasis v1.1\bin\Debug\ObjectListView.pdb
 C:\Hao's Code\OASIS V1.1\Oasis v1.1\Oasis v1.1\bin\Debug\ObjectListView.xml
+C:\Hao's Code\OASIS V1.1\Oasis v1.1\Oasis v1.1\obj\Debug\Oasis_v1._1.fmNetworkCreation.resources
