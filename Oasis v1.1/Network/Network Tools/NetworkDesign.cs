@@ -26,6 +26,11 @@ namespace Oasis_v1._1
         public Graphics p;
         private TileAsyncLayer tileLayer = new TileAsyncLayer(new GoogleTileSource(GoogleMapType.GoogleMap), "TileLayer - Google");
         private List<Coordinate> _pointArray = new List<Coordinate>(2);
+        private bool _isFirstMouseClicked;
+        private bool _isSecondMouseClicked;
+
+        private Coordinate startCoordinate = new Coordinate();
+        private Coordinate endCoordinate = new Coordinate();
 
         #endregion
 
@@ -33,7 +38,6 @@ namespace Oasis_v1._1
 
         public NetworkDesign(MapBox mapbox)
         {
-            _pointArray = new List<Coordinate>(2);
             _mapbox = mapbox;
             _mapbox.MouseDown += new MapBox.MouseEventHandler(OnMouseDown);
             _mapbox.MouseMove += new MapBox.MouseEventHandler(OnMouseMove);
@@ -47,102 +51,109 @@ namespace Oasis_v1._1
 
         public void OnMouseDown(Coordinate coordinate, MouseEventArgs e)
         {
-            Coordinate tempCoord = coordinate;
-
             if (Forms.dockMain.nodeCreationToolStripMenuItem.Checked)
                 ObjectCreation.AddNode(_mapbox, coordinate, e.Location);
 
             if (Forms.dockMain.linkCreationToolStripMenuItem.Checked)
             {
                 _mapbox.Cursor = Cursors.Cross;
+                _isFirstMouseClicked = true;
+
                 if (States.Network.IsNodeCollectionEmpty())
                 {
-                    _pointArray.Clear();
-                    _pointArray.Add(coordinate);
-                    _pointArray.Add(coordinate);
+                    startCoordinate = coordinate;
+                    endCoordinate = coordinate;
                 }
                 else
                 {
-                    foreach (var node in States.Network.InfraNodes)
+                    for (int i = 0; i < States.Network.InfraNodes.Count; i++)
                     {
-                        if (node.EnvelopeContains(coordinate))
+                        if (States.Network.InfraNodes[i].EnvelopeContains(coordinate))
                         {
-                            _pointArray.Clear();
-                            _pointArray.Add(node.Coordinate);
-                            _pointArray.Add(node.Coordinate);
+                            string NodeID = States.Network.InfraNodes[i].Coordinate.ToString();
+                            startCoordinate = States.Network.InfraNodes[i].Coordinate;
+                            endCoordinate = States.Network.InfraNodes[i].Coordinate;
+                            Forms.dockMap.lblMainStatus.Text = NodeID + "Contained!";
+                            break;
                         }
                         else
                         {
-                            _pointArray.Clear();
-                            _pointArray.Add(coordinate);
-                            _pointArray.Add(coordinate);
+                            startCoordinate = coordinate;
+                            endCoordinate = coordinate;
+                            Forms.dockMap.lblMainStatus.Text = "Not Contained!";
                         }
                     }
-                }
-                
-                _mapbox.Invalidate();
+
+                }              
             }
 
-
+            _mapbox.Invalidate();
         }
 
         public void OnMouseMove(Coordinate coordinate, MouseEventArgs e)
         {
             if (Forms.dockMain.linkCreationToolStripMenuItem.Checked)
             {
-                if (_pointArray.Count == 2)
+                if (!States.Network.IsNodeCollectionEmpty())
                 {
-                    _pointArray[_pointArray.Count - 1] = _mapbox.Map.ImageToWorld(e.Location);
-                    _mapbox.Invalidate();
+                    for (int i = 0; i < States.Network.InfraNodes.Count; i++)
+                    {
+                        if (States.Network.InfraNodes[i].EnvelopeContains(coordinate))
+                        {
+                            string NodeID = States.Network.InfraNodes[i].Coordinate.ToString();
+                            endCoordinate = States.Network.InfraNodes[i].Coordinate;
+                            Forms.dockMap.lblMainStatus.Text = "Contained!" + NodeID;
+                            break;
+                        }
+                        else
+                        {
+                            endCoordinate = coordinate;
+                            Forms.dockMap.lblMainStatus.Text = "Not Contained!";                       
+                        }
+                    }
                 }
             }
+            _mapbox.Invalidate();
         }
 
         public void OnMouseUp(Coordinate coordinate, MouseEventArgs e)
         {
             if (Forms.dockMain.linkCreationToolStripMenuItem.Checked)
             {
+                _isFirstMouseClicked = false;
+                _isSecondMouseClicked = true;
+
                 if (States.Network.IsNodeCollectionEmpty())
                 {
-                    if (_pointArray.Count == 2)
-                    {
-                        _pointArray[_pointArray.Count - 1] = coordinate;
-                        p1 = _mapbox.Map.WorldToImage(_pointArray[0]);
-                        p2 = _mapbox.Map.WorldToImage(_pointArray[1]);
-                        ObjectCreation.AddLink(_mapbox, _pointArray[0], _pointArray[1]);
-                        _pointArray.Clear();
-                    }
+                        endCoordinate = coordinate;
+                        p1 = _mapbox.Map.WorldToImage(startCoordinate);
+                        p2 = _mapbox.Map.WorldToImage(endCoordinate);
+                        ObjectCreation.AddLink(_mapbox, startCoordinate, endCoordinate);
                 }
                 else
                 {
-                    foreach (var node in States.Network.InfraNodes)
+                    for (int i = 0; i < States.Network.InfraNodes.Count; i++)
                     {
-                        if (node.EnvelopeContains(coordinate))
+                        if (States.Network.InfraNodes[i].EnvelopeContains(coordinate))
                         {
-                            if (_pointArray.Count == 2)
-                            {
-                                _pointArray[_pointArray.Count - 1] = node.Coordinate;
-                                p1 = _mapbox.Map.WorldToImage(_pointArray[0]);
-                                p2 = _mapbox.Map.WorldToImage(_pointArray[1]);
-                                ObjectCreation.AddLink(_mapbox, _pointArray[0], _pointArray[1]);
-                                _pointArray.Clear();
-                            }
+                            endCoordinate = States.Network.InfraNodes[i].Coordinate;
+                            p1 = _mapbox.Map.WorldToImage(startCoordinate);
+                            p2 = _mapbox.Map.WorldToImage(endCoordinate);
+                            ObjectCreation.AddLink(_mapbox, startCoordinate, endCoordinate);
                         }
                         else
                         {
-                            if (_pointArray.Count == 2)
-                            {
-                                _pointArray[_pointArray.Count - 1] = coordinate;
-                                p1 = _mapbox.Map.WorldToImage(_pointArray[0]);
-                                p2 = _mapbox.Map.WorldToImage(_pointArray[1]);
-                                ObjectCreation.AddLink(_mapbox, _pointArray[0], _pointArray[1]);
-                                _pointArray.Clear();
-                            }
+                            endCoordinate = coordinate;
+                            p1 = _mapbox.Map.WorldToImage(startCoordinate);
+                            p2 = _mapbox.Map.WorldToImage(endCoordinate);
                         }
                     }
- 
                 }
 
+                startCoordinate = null;
+                endCoordinate = null;
+                _isSecondMouseClicked = false;
+                _mapbox.Invalidate();
             }
         }
 
@@ -160,10 +171,11 @@ namespace Oasis_v1._1
                 //_mapbox.Map.Zoom = 20000;
             }
 
-            if (Forms.dockMain.linkCreationToolStripMenuItem.Checked && _pointArray.Count >0)
+            //if (Forms.dockMain.linkCreationToolStripMenuItem.Checked && _pointArray.Count >0)
+            if (_isFirstMouseClicked || _isSecondMouseClicked)
             {
-                var p1 = _mapbox.Map.WorldToImage(_pointArray[0]);
-                var p2 = _mapbox.Map.WorldToImage(_pointArray[1]);
+                var p1 = _mapbox.Map.WorldToImage(startCoordinate);
+                var p2 = _mapbox.Map.WorldToImage(endCoordinate);
                 p.DrawLine(new Pen(Color.Green, 1F), p1, p2);
             }
 

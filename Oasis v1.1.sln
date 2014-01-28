@@ -17,6 +17,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pan.Optimisation", "Pan\Pan
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pan.Exceptions", "Pan\Pan.Exceptions\Pan.Exceptions.csproj", "{C49896A3-C0DA-45C4-B30E-4D17E548DBF6}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pan.Diagram", "Pan\Pan.Diagram2\Pan.Diagram.csproj", "{306ABC6B-2FF1-4A92-9177-10F107889347}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -55,6 +57,10 @@ Global
 		{C49896A3-C0DA-45C4-B30E-4D17E548DBF6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C49896A3-C0DA-45C4-B30E-4D17E548DBF6}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C49896A3-C0DA-45C4-B30E-4D17E548DBF6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{306ABC6B-2FF1-4A92-9177-10F107889347}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{306ABC6B-2FF1-4A92-9177-10F107889347}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{306ABC6B-2FF1-4A92-9177-10F107889347}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{306ABC6B-2FF1-4A92-9177-10F107889347}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

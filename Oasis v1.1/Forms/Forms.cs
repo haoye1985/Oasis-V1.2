@@ -12,6 +12,7 @@ namespace Oasis_v1._1
         public static fmLink dockLink;
         public static fmDiagram dockDiagram;
         public static fmConsole dockConsole;
+        public static fmDesignDiagram dockDesignDiagram;
 
         public static void Initialise()
         {
@@ -24,6 +25,7 @@ namespace Oasis_v1._1
                 dockLink = new fmLink(),
                 dockDiagram = new fmDiagram(),
                 dockConsole = new fmConsole(),
+                dockDesignDiagram = new fmDesignDiagram(),
                 dockMap = new fmMap(),
             };
 

@@ -18,6 +18,7 @@ namespace Oasis_v1._1
         public bool IsAllConnected()
         {
             List<InfraLink> connectedLinks = new List<InfraLink>();
+
             foreach (var link in _network.InfraLinks)
             {
                 foreach (var node in _network.InfraNodes)

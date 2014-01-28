@@ -130,7 +130,6 @@ namespace Oasis_v1._1
 
             private void linkCreationToolStripMenuItem_Click(object sender, EventArgs e)
             {
-
                 ControlHelper.AddNetworkLinkColumn(Forms.dockLink.dataGridViewPersistent1);
                 linkCreationToolStripMenuItem.CheckState = CheckState.Checked;
                 nodeCreationToolStripMenuItem.CheckState = CheckState.Unchecked;

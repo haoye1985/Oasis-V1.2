@@ -13,7 +13,7 @@ namespace Oasis_v1._1
     {
         #region Fields
 
-            private double expansionFactor = 30.0;
+            private double expansionFactor = 10.0;
           
             private IPoint _point;
             private Coordinate _coordinate;

@@ -78,7 +78,7 @@
             // lblMainStatus
             // 
             this.lblMainStatus.Font = new System.Drawing.Font("Arial", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblMainStatus.ForeColor = System.Drawing.Color.Red;
+            this.lblMainStatus.ForeColor = System.Drawing.Color.Purple;
             this.lblMainStatus.Name = "lblMainStatus";
             this.lblMainStatus.Size = new System.Drawing.Size(53, 22);
             this.lblMainStatus.Text = "status ";
