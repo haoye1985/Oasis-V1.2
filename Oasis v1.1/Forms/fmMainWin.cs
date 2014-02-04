@@ -130,14 +130,14 @@ namespace Oasis_v1._1
 
             private void linkCreationToolStripMenuItem_Click(object sender, EventArgs e)
             {
-                ControlHelper.AddNetworkLinkColumn(Forms.dockLink.dataGridViewPersistent1);
+                NetworkUpdator.CreateInfraLinkColumn(Forms.dockLink.dataGridViewPersistent1);
                 linkCreationToolStripMenuItem.CheckState = CheckState.Checked;
                 nodeCreationToolStripMenuItem.CheckState = CheckState.Unchecked;
             }
 
             private void nodeCreationToolStripMenuItem_Click(object sender, EventArgs e)
             {
-                ControlHelper.AddNetworkNodeColumn(Forms.dockNode.dataGridViewPersistent1);
+                NetworkUpdator.CreateInfraNodeColumn(Forms.dockNode.dataGridViewPersistent1);
                 nodeCreationToolStripMenuItem.CheckState = CheckState.Checked;
                 linkCreationToolStripMenuItem.CheckState = CheckState.Unchecked;
                 
@@ -147,14 +147,10 @@ namespace Oasis_v1._1
             {
                 if (!(nodeCreationToolStripMenuItem.Enabled && linkCreationToolStripMenuItem.Enabled))
                 {
-                    fmNetworkCreation networkCreation = new fmNetworkCreation();
+                    editNetworkCreation networkCreation = new editNetworkCreation();
                     networkCreation.Show();
-
                     dl = new NetworkDesign(Forms.dockMap.mapBox1);
                     Forms.dockMap.lblMainStatus.Text = "Network Builder Mode";    
-
-                    Forms.dockDiagram.pDiagram1.Init();
-                    Forms.dockDiagram.pDiagram1.FinalizeDiagram();
                 }
             }
 
@@ -181,8 +177,8 @@ namespace Oasis_v1._1
                 }
                 else
                 {
-                    int nodeCount = States.Network.InfraNodes.Count;
-                    int linkCount = States.Network.InfraLinks.Count;
+                    int nodeCount = States.Network.NodesCollection.InfraNodes.Count;
+                    int linkCount = States.Network.LinksCollection.InfraLinks.Count;
                     MessageBox.Show("The current network contains " + nodeCount + " nodes and " + linkCount + " links!");
                 }
             }

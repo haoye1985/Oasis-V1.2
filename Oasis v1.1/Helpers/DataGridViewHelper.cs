@@ -10,6 +10,7 @@ namespace Oasis_v1._1
 {
     public static class DataGridViewHelper
     {
+
         public static void CopySelectedRow(DataGridViewPersistent dgv_org, DataGridViewRow row)
         {
             DataGridViewPersistent dgv_copy = new DataGridViewPersistent();
@@ -38,8 +39,6 @@ namespace Oasis_v1._1
             }
         }
 
-
-
         public static void CopySelectedRows(DataGridViewPersistent CopyFrom, DataGridViewPersistent CopyTo)
         {
             CopyTo.Rows.Clear();
@@ -60,8 +59,6 @@ namespace Oasis_v1._1
                     CopyTo.Rows[index].Cells[o.ColumnIndex].Value = o.Value;
                 }
             }
-
-
         }
 
         public static DataGridViewPersistent CopySelectedDataView(DataGridViewPersistent dgv_org)

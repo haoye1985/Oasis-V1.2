@@ -9,114 +9,93 @@ namespace Oasis_v1._1
 {
     public class InfraNetwork
     {
+        #region Private Field
+
         private string _networkID;
         private string _networkName;
         private NetworkType _networkType = NetworkType.Default_Network;
-        private double expansionFactor;
+        private InfraNodesCollection _networkNodesCollection = new InfraNodesCollection();
+        private InfraLinksCollection _networkLinksCollection = new InfraLinksCollection();
 
-        private List<InfraNode> _infraNodes;
-        private List<InfraLink> _infraLinks;
-
-        private List<IPoint> _PointGeometries = new List<IPoint>();
-        private List<ILineString> _LineGemetries = new List<ILineString>();
-        private List<IPoint> _centroids = new List<IPoint>();
+        #endregion
 
         #region Constructor
 
-        public InfraNetwork()
+        public InfraNetwork() {}
+
+        public InfraNetwork(InfraNodesCollection Nodes, InfraLinksCollection Links)
         {
-            _infraNodes = new List<InfraNode>();
-            _infraLinks = new List<InfraLink>();
-            Initialise();
+            _networkNodesCollection.InfraNodes = Nodes.InfraNodes;
+            _networkLinksCollection.InfraLinks = Links.InfraLinks;
         }
 
         #endregion
+
+        #region Methods
+
+        public void AddNodeCollection(InfraNodesCollection Nodes)
+        {
+            _networkNodesCollection = Nodes;
+        }
+
+        public void AddLinkCollection(InfraLinksCollection Links)
+        {
+            _networkLinksCollection = Links;
+        }
+
+        public void AddNodeToNetwork(InfraNode node)
+        {
+            _networkNodesCollection.AddNodeToCollection(node);
+        }
+
+        public void AddLinkToNetwork(InfraLink link)
+        {
+            _networkLinksCollection.AddLinkToCollection(link);
+        }
+
+        public void DeleteLinkFromNetwork(InfraLink link)
+        {
+            _networkLinksCollection.RemoveLinkFromCollection(link);
+        }
+
+        public void DeleteNodeFromNetwork(InfraNode node)
+        {
+            _networkNodesCollection.RemoveNodeFromCollection(node);
+        }
 
         public string GenerateID()
         {
             return Guid.NewGuid().ToString();
         }
 
-
-
-
-
-        private void Initialise()
-        {
-            DoObtainGeometry();
-        }
-
-        private void DoObtainGeometry()
-        {
-            foreach (var infranode in _infraNodes)
-            {
-                _PointGeometries.Add(infranode.Point);
-            }
-
-            foreach (var infralink in _infraLinks)
-            {
-                _LineGemetries.Add(infralink.Line);
-            }
-
-            foreach (var infralink in _infraLinks)
-            {
-                _centroids.Add(infralink.Line.Centroid);
-            }
-        }
-
-        #region Methods
-
         public bool IsCollectionEmpty()
         {
-            return InfraLinks.Count == 0 && InfraNodes.Count == 0;
+            return (_networkNodesCollection.InfraNodes.Count == 0) && (_networkLinksCollection.InfraLinks.Count == 0);
         }
 
         public bool IsNodeCollectionEmpty()
         {
-            return _infraNodes.Count == 0;
+            return _networkNodesCollection.InfraNodes.Count == 0;
         }
 
         public bool IsLinkCollectionEmpty()
         {
-            return _infraLinks.Count == 0;
-        }
-
-        public void AddNode(InfraNode node)
-        {
-            _infraNodes.Add(node);
-            _PointGeometries.Add(node.Point);
-        }
-
-        public void AddLink(InfraLink link)
-        {
-            _infraLinks.Add(link);
-            _LineGemetries.Add(link.Line);
-            _centroids.Add(link.Line.Centroid);
-        }
-
-        public void DeleteLink(InfraLink link)
-        {
-            _infraLinks.Remove(link);
-        }
-
-        public void DeleteNode(InfraNode node)
-        {
-            _infraNodes.Remove(node);
+            return _networkLinksCollection.InfraLinks.Count == 0;
         }
 
         public void DeleteAllLink()
         {
-            for (int i = 0; i < _infraLinks.Count; i++)
+            for (int i = 0; i < _networkLinksCollection.InfraLinks.Count; i++)
             {
-                _infraLinks.Remove(_infraLinks[i]);
+                _networkLinksCollection.RemoveLinkFromCollection(_networkLinksCollection.InfraLinks[i]);
             }
         }
 
         public void DeleteAllNodes()
         {
-            for (int i = 0; i < _infraNodes.Count; i++)
+            for (int i = 0; i < _networkNodesCollection.InfraNodes.Count; i++)
             {
-                _infraNodes.Remove(_infraNodes[i]);
+                _networkNodesCollection.RemoveNodeFromCollection(_networkNodesCollection.InfraNodes[i]);
             }
         }
 
@@ -142,52 +121,26 @@ namespace Oasis_v1._1
             set { _networkType = value; }
         }
 
-        public double ExpansionFactor
+        public InfraNodesCollection NodesCollection
         {
-            get { return expansionFactor; }
-            set { expansionFactor = value; }
+            get { return _networkNodesCollection; }
+            set { _networkNodesCollection = value; }
         }
 
-        public List<InfraNode> InfraNodes
+        public InfraLinksCollection LinksCollection
         {
-            get
-            {
-                return _infraNodes;
-            }
-            set
-            {
-                _infraNodes = value;
-            }
+            get { return _networkLinksCollection; }
+            set { _networkLinksCollection = value; }
         }
 
-        public List<InfraLink> InfraLinks
+        public string InfraNodesCount
         {
-            get
-            {
-                return _infraLinks;
-            }
-            set
-            {
-                _infraLinks = value;
-            }
+            get { return _networkNodesCollection.InfraNodes.Count.ToString(); }
         }
 
-        public List<IPoint> NodeGeometry
+        public string InfraLinksCount
         {
-            get { return _PointGeometries; }
-            set { _PointGeometries = value; }
-        }
-
-        public List<ILineString> LineGeometry
-        {
-            get { return _LineGemetries; }
-            set { _LineGemetries = value; }
-        }
-
-        public List<IPoint> Centriods
-        {
-            get { return _centroids; }
-            set { _centroids = value; }
+            get { return _networkLinksCollection.InfraLinks.Count.ToString(); }
         }
 
         #endregion

@@ -10,9 +10,9 @@ namespace Oasis_v1._1
         public static fmMap dockMap;
         public static fmNode dockNode;
         public static fmLink dockLink;
-        public static fmDiagram dockDiagram;
         public static fmConsole dockConsole;
         public static fmDesignDiagram dockDesignDiagram;
+        public static fmNetwork dockNetwork;
 
         public static void Initialise()
         {
@@ -21,14 +21,13 @@ namespace Oasis_v1._1
 
             var _DockContents = new DockContent[]
             {
-                dockNode = new fmNode(),
-                dockLink = new fmLink(),
-                dockDiagram = new fmDiagram(),
+                dockMap = new fmMap(),
                 dockConsole = new fmConsole(),
                 dockDesignDiagram = new fmDesignDiagram(),
-                dockMap = new fmMap(),
+                dockNetwork = new fmNetwork(),
+                dockNode = new fmNode(),
+                dockLink = new fmLink(),
             };
-
             dockManager.AddDocks(_DockContents);
 
             //Here you have to activiate the programs at Program file

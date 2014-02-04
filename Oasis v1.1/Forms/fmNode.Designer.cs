@@ -83,13 +83,14 @@
             this.dataGridViewPersistent1.RowsDefaultCellStyle = dataGridViewCellStyle3;
             this.dataGridViewPersistent1.RowTemplate.Height = 30;
             this.dataGridViewPersistent1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridViewPersistent1.Size = new System.Drawing.Size(491, 615);
+            this.dataGridViewPersistent1.Size = new System.Drawing.Size(513, 615);
             this.dataGridViewPersistent1.TabIndex = 0;
             this.dataGridViewPersistent1.SelectionChanged += new System.EventHandler(this.dataGridViewPersistent1_SelectionChanged);
             // 
             // toolStrip1
             // 
-            this.toolStrip1.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.toolStrip1.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.toolStrip1.GripStyle = System.Windows.Forms.ToolStripGripStyle.Hidden;
             this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripLabel1,
             this.toolStripLabel2,
@@ -104,19 +105,19 @@
             // toolStripLabel1
             // 
             this.toolStripLabel1.Name = "toolStripLabel1";
-            this.toolStripLabel1.Size = new System.Drawing.Size(41, 28);
+            this.toolStripLabel1.Size = new System.Drawing.Size(44, 28);
             this.toolStripLabel1.Text = "Edit";
             // 
             // toolStripLabel2
             // 
             this.toolStripLabel2.Name = "toolStripLabel2";
-            this.toolStripLabel2.Size = new System.Drawing.Size(62, 28);
+            this.toolStripLabel2.Size = new System.Drawing.Size(66, 28);
             this.toolStripLabel2.Text = "Delete";
             // 
             // toolStripLabel3
             // 
             this.toolStripLabel3.Name = "toolStripLabel3";
-            this.toolStripLabel3.Size = new System.Drawing.Size(76, 28);
+            this.toolStripLabel3.Size = new System.Drawing.Size(80, 28);
             this.toolStripLabel3.Text = "Filter By";
             // 
             // toolStripTextBox1
@@ -138,7 +139,7 @@
             // 
             this.splitContainer1.Panel2.Controls.Add(this.dataGridViewPersistent2);
             this.splitContainer1.Size = new System.Drawing.Size(897, 615);
-            this.splitContainer1.SplitterDistance = 491;
+            this.splitContainer1.SplitterDistance = 513;
             this.splitContainer1.TabIndex = 2;
             // 
             // dataGridViewPersistent2
@@ -177,7 +178,7 @@
             dataGridViewCellStyle7.Font = new System.Drawing.Font("Arial", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dataGridViewPersistent2.RowsDefaultCellStyle = dataGridViewCellStyle7;
             this.dataGridViewPersistent2.RowTemplate.Height = 30;
-            this.dataGridViewPersistent2.Size = new System.Drawing.Size(402, 615);
+            this.dataGridViewPersistent2.Size = new System.Drawing.Size(380, 615);
             this.dataGridViewPersistent2.TabIndex = 0;
             // 
             // fmNode

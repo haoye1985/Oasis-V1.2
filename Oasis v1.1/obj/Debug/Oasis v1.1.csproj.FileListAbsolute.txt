@@ -33,7 +33,6 @@ C:\Hao's Code\OASIS V1.1\Oasis v1.1\Oasis v1.1\bin\Debug\Pan.Utilities.pdb
 C:\Hao's Code\OASIS V1.1\Oasis v1.1\Oasis v1.1\obj\Debug\Oasis_v1._1.fmNode.resources
 C:\Hao's Code\OASIS V1.1\Oasis v1.1\Oasis v1.1\obj\Debug\Oasis_v1._1.fmConsole.resources
 C:\Hao's Code\OASIS V1.1\Oasis v1.1\Oasis v1.1\obj\Debug\Oasis_v1._1.fmLink.resources
-C:\Hao's Code\OASIS V1.1\Oasis v1.1\Oasis v1.1\obj\Debug\Oasis_v1._1.fmDiagram.resources
 C:\Hao's Code\OASIS V1.1\Oasis v1.1\Oasis v1.1\bin\Debug\Pan.Settings.dll
 C:\Hao's Code\OASIS V1.1\Oasis v1.1\Oasis v1.1\bin\Debug\Pan.Settings.pdb
 C:\Hao's Code\OASIS V1.1\Oasis v1.1\Oasis v1.1\obj\Debug\Oasis_v1._1.fmSetting.resources
@@ -41,9 +40,9 @@ C:\Hao's Code\OASIS V1.1\Oasis v1.1\Oasis v1.1\bin\Debug\NetTopologySuite.IO.Pos
 C:\Hao's Code\OASIS V1.1\Oasis v1.1\Oasis v1.1\bin\Debug\ObjectListView.dll
 C:\Hao's Code\OASIS V1.1\Oasis v1.1\Oasis v1.1\bin\Debug\ObjectListView.pdb
 C:\Hao's Code\OASIS V1.1\Oasis v1.1\Oasis v1.1\bin\Debug\ObjectListView.xml
-C:\Hao's Code\OASIS V1.1\Oasis v1.1\Oasis v1.1\obj\Debug\Oasis_v1._1.fmNetworkCreation.resources
 C:\Hao's Code\OASIS V1.1\Oasis v1.1\Oasis v1.1\bin\Debug\Pan.Diagram.dll
 C:\Hao's Code\OASIS V1.1\Oasis v1.1\Oasis v1.1\bin\Debug\Prodige.Drawing.dll
 C:\Hao's Code\OASIS V1.1\Oasis v1.1\Oasis v1.1\bin\Debug\Pan.Diagram.pdb
 C:\Hao's Code\OASIS V1.1\Oasis v1.1\Oasis v1.1\obj\Debug\Oasis_v1._1.fmDesignDiagram.resources
-C:\Hao's Code\OASIS V1.1\Oasis v1.1\Oasis v1.1\bin\Debug\Asty.Core.dll
+C:\Hao's Code\OASIS V1.1\Oasis v1.1\Oasis v1.1\obj\Debug\Oasis_v1._1.fmNetwork.resources
+C:\Hao's Code\OASIS V1.1\Oasis v1.1\Oasis v1.1\obj\Debug\Oasis_v1._1.editNetworkCreation.resources

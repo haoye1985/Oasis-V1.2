@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using WeifenLuo.WinFormsUI.Docking;
+using Pan.Utilities;
 
 namespace Oasis_v1._1
 {
@@ -18,6 +19,8 @@ namespace Oasis_v1._1
             InitializeComponent();
         }
 
+        private delegate void DelSimple();
+
         private void dataGridViewPersistent1_SelectionChanged(object sender, EventArgs e)
         {
             if (dataGridViewPersistent1.SelectedRows.Count > 0)
@@ -27,5 +30,20 @@ namespace Oasis_v1._1
                 dataGridViewPersistent2.Refresh();
             }
         }
+
+        private void UpdateList()
+        {
+            if (InvokeRequired)
+            {
+                Invoke(new DelSimple(UpdateList), new object[] { });
+            }
+            else
+            {
+                dataGridViewPersistent1.UpdateFrom(States.Network.LinksCollection.InfraLinks);
+            }
+        }
+
+
+
     }
 }

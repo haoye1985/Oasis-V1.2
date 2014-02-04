@@ -34,13 +34,13 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
-            this.dataGridViewPersistent1 = new Pan.Utilities.DataGridViewPersistent();
-            this.splitContainer1 = new System.Windows.Forms.SplitContainer();
-            this.dataGridViewPersistent2 = new Pan.Utilities.DataGridViewPersistent();
             this.toolStripLabel1 = new System.Windows.Forms.ToolStripLabel();
             this.toolStripLabel2 = new System.Windows.Forms.ToolStripLabel();
             this.toolStripLabel3 = new System.Windows.Forms.ToolStripLabel();
             this.toolStripTextBox1 = new System.Windows.Forms.ToolStripTextBox();
+            this.dataGridViewPersistent1 = new Pan.Utilities.DataGridViewPersistent();
+            this.splitContainer1 = new System.Windows.Forms.SplitContainer();
+            this.dataGridViewPersistent2 = new Pan.Utilities.DataGridViewPersistent();
             this.toolStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewPersistent1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
@@ -60,9 +60,32 @@
             this.toolStripTextBox1});
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(850, 31);
+            this.toolStrip1.Size = new System.Drawing.Size(962, 31);
             this.toolStrip1.TabIndex = 0;
             this.toolStrip1.Text = "toolStrip1";
+            // 
+            // toolStripLabel1
+            // 
+            this.toolStripLabel1.Name = "toolStripLabel1";
+            this.toolStripLabel1.Size = new System.Drawing.Size(44, 28);
+            this.toolStripLabel1.Text = "Edit";
+            // 
+            // toolStripLabel2
+            // 
+            this.toolStripLabel2.Name = "toolStripLabel2";
+            this.toolStripLabel2.Size = new System.Drawing.Size(66, 28);
+            this.toolStripLabel2.Text = "Delete";
+            // 
+            // toolStripLabel3
+            // 
+            this.toolStripLabel3.Name = "toolStripLabel3";
+            this.toolStripLabel3.Size = new System.Drawing.Size(80, 28);
+            this.toolStripLabel3.Text = "Filter By";
+            // 
+            // toolStripTextBox1
+            // 
+            this.toolStripTextBox1.Name = "toolStripTextBox1";
+            this.toolStripTextBox1.Size = new System.Drawing.Size(100, 31);
             // 
             // dataGridViewPersistent1
             // 
@@ -93,7 +116,7 @@
             this.dataGridViewPersistent1.RowsDefaultCellStyle = dataGridViewCellStyle3;
             this.dataGridViewPersistent1.RowTemplate.Height = 30;
             this.dataGridViewPersistent1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridViewPersistent1.Size = new System.Drawing.Size(477, 595);
+            this.dataGridViewPersistent1.Size = new System.Drawing.Size(542, 657);
             this.dataGridViewPersistent1.TabIndex = 1;
             this.dataGridViewPersistent1.SelectionChanged += new System.EventHandler(this.dataGridViewPersistent1_SelectionChanged);
             // 
@@ -110,8 +133,8 @@
             // splitContainer1.Panel2
             // 
             this.splitContainer1.Panel2.Controls.Add(this.dataGridViewPersistent2);
-            this.splitContainer1.Size = new System.Drawing.Size(850, 595);
-            this.splitContainer1.SplitterDistance = 477;
+            this.splitContainer1.Size = new System.Drawing.Size(962, 657);
+            this.splitContainer1.SplitterDistance = 542;
             this.splitContainer1.TabIndex = 2;
             // 
             // dataGridViewPersistent2
@@ -135,37 +158,14 @@
             dataGridViewCellStyle5.Font = new System.Drawing.Font("Arial", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dataGridViewPersistent2.RowsDefaultCellStyle = dataGridViewCellStyle5;
             this.dataGridViewPersistent2.RowTemplate.Height = 30;
-            this.dataGridViewPersistent2.Size = new System.Drawing.Size(369, 595);
+            this.dataGridViewPersistent2.Size = new System.Drawing.Size(416, 657);
             this.dataGridViewPersistent2.TabIndex = 0;
-            // 
-            // toolStripLabel1
-            // 
-            this.toolStripLabel1.Name = "toolStripLabel1";
-            this.toolStripLabel1.Size = new System.Drawing.Size(44, 28);
-            this.toolStripLabel1.Text = "Edit";
-            // 
-            // toolStripLabel2
-            // 
-            this.toolStripLabel2.Name = "toolStripLabel2";
-            this.toolStripLabel2.Size = new System.Drawing.Size(66, 28);
-            this.toolStripLabel2.Text = "Delete";
-            // 
-            // toolStripLabel3
-            // 
-            this.toolStripLabel3.Name = "toolStripLabel3";
-            this.toolStripLabel3.Size = new System.Drawing.Size(80, 28);
-            this.toolStripLabel3.Text = "Filter By";
-            // 
-            // toolStripTextBox1
-            // 
-            this.toolStripTextBox1.Name = "toolStripTextBox1";
-            this.toolStripTextBox1.Size = new System.Drawing.Size(100, 31);
             // 
             // fmLink
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(850, 626);
+            this.ClientSize = new System.Drawing.Size(962, 688);
             this.Controls.Add(this.splitContainer1);
             this.Controls.Add(this.toolStrip1);
             this.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));

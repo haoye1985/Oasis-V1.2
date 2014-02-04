@@ -104,34 +104,38 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Automation.cs" />
+    <Compile Include="Model\ModelConnector.cs" />
+    <Compile Include="Utilities\Automation.cs" />
+    <Compile Include="Forms\fmNetwork.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\fmNetwork.Designer.cs">
+      <DependentUpon>fmNetwork.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\fmDesignDiagram.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Forms\fmDesignDiagram.Designer.cs">
       <DependentUpon>fmDesignDiagram.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\fmNetworkCreation.cs">
+    <Compile Include="Forms\edNetworkCreation.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\fmNetworkCreation.Designer.cs">
-      <DependentUpon>fmNetworkCreation.cs</DependentUpon>
+    <Compile Include="Forms\edNetworkCreation.Designer.cs">
+      <DependentUpon>edNetworkCreation.cs</DependentUpon>
     </Compile>
     <Compile Include="Helpers\DataGridViewHelper.cs" />
     <Compile Include="Helpers\GeospatialHelper.cs" />
-    <Compile Include="Helpers\ControlHelper.cs" />
+    <Compile Include="Network\Network Attributes\NetworkConstants.cs" />
+    <Compile Include="Network\Network Core\InfraLinksCollection.cs" />
+    <Compile Include="Network\Network Core\InfraNodesCollection.cs" />
+    <Compile Include="Network\Network Operators\NetworkUpdator.cs" />
     <Compile Include="Database\DBConnection.cs" />
     <Compile Include="Forms\fmSetting.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Forms\fmSetting.Designer.cs">
       <DependentUpon>fmSetting.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Forms\fmDiagram.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\fmDiagram.Designer.cs">
-      <DependentUpon>fmDiagram.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\fmConsole.cs">
       <SubType>Form</SubType>
@@ -146,11 +150,11 @@
       <DependentUpon>fmLink.cs</DependentUpon>
     </Compile>
     <Compile Include="Network\Network Visualiser\NetworkRenderingStyle.cs" />
-    <Compile Include="Model.cs" />
-    <Compile Include="Network\Network Tools\NetworkAnalysis.cs" />
-    <Compile Include="Network\Network Core\NetworkType.cs" />
-    <Compile Include="Network\Network Core\NetworksCollection.cs" />
-    <Compile Include="Network\Network Tools\NetworkDesign.cs" />
+    <Compile Include="Model\CoreModel.cs" />
+    <Compile Include="Network\Network Operators\NetworkAnalysis.cs" />
+    <Compile Include="Network\Network Attributes\NetworkType.cs" />
+    <Compile Include="Network\Network Core\InfraNetworksCollection.cs" />
+    <Compile Include="Network\Network Operators\NetworkDesign.cs" />
     <Compile Include="Forms\fmDatabase.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -184,18 +188,21 @@
     <Compile Include="Database\PostGIS.cs" />
     <Compile Include="Database\PostGisHelper.cs" />
     <Compile Include="Database\PostGisMetaItem.cs" />
-    <Compile Include="Functions\Program.cs" />
+    <Compile Include="Utilities\Program.cs" />
     <Compile Include="Helpers\ProjectionHelper.cs" />
-    <Compile Include="Network\Network Tools\NetworkObjectCreation.cs" />
+    <Compile Include="Network\Network Operators\NetworkObjectCreation.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Network\States.cs" />
-    <Compile Include="Functions\Setting.cs" />
-    <Compile Include="Functions\ZoomExtent.cs" />
+    <Compile Include="Utilities\States.cs" />
+    <Compile Include="Utilities\Setting.cs" />
+    <Compile Include="Utilities\ZoomExtent.cs" />
     <EmbeddedResource Include="Forms\fmDesignDiagram.resx">
       <DependentUpon>fmDesignDiagram.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\fmNetworkCreation.resx">
-      <DependentUpon>fmNetworkCreation.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\fmNetwork.resx">
+      <DependentUpon>fmNetwork.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\edNetworkCreation.resx">
+      <DependentUpon>edNetworkCreation.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\fmSetting.resx">
       <DependentUpon>fmSetting.cs</DependentUpon>
@@ -205,9 +212,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\fmDatabase.resx">
       <DependentUpon>fmDatabase.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\fmDiagram.resx">
-      <DependentUpon>fmDiagram.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\fmMap.resx">
       <DependentUpon>fmMap.cs</DependentUpon>
@@ -241,7 +245,7 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Functions\App.config" />
+    <None Include="Utilities\App.config" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Pan\Pan.Diagramer\Pan.Diagramer.csproj">
@@ -264,6 +268,7 @@
   <ItemGroup>
     <WCFMetadata Include="Service References\" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

@@ -13,39 +13,40 @@ namespace Oasis_v1._1
     {
         #region Fields
 
-            private double expansionFactor = 10.0;
-          
-            private IPoint _point;
+            private IPoint _geometry;
             private Coordinate _coordinate;
+
+
+            private string _nodeName = "NodeName";
+
             private GeometryFactory factory = new GeometryFactory();
             private Envelope _hitTestZone = new Envelope();
             private bool _isSelected;
 
-            public float RiskXi { get; set; }
-
-            public float RiskCi { get; set; }
-
             private int _ID;
-            private string _nodeName = "NodeName";
+            public float RiskXi { get; set; }
+            public float RiskCi { get; set; }
 
         #endregion
 
         #region Constructors
 
+            public InfraNode() { }
+
             public InfraNode(IPoint point)
             {
-                _point = point;
-                _coordinate = _point.Coordinate;
-                _hitTestZone = new Envelope(_point.Coordinate);
-                _hitTestZone.ExpandBy(expansionFactor);
+                _geometry = point;
+                _coordinate = _geometry.Coordinate;
+                _hitTestZone = new Envelope(_geometry.Coordinate);
+                _hitTestZone.ExpandBy(NetworkConstants.ExpansionFactor);
             }
 
             public InfraNode(Coordinate coordinate)
             {
-                _point = factory.CreatePoint(coordinate);
-                _coordinate = _point.Coordinate;
-                _hitTestZone = new Envelope(_point.Coordinate);
-                _hitTestZone.ExpandBy(expansionFactor);
+                _geometry = factory.CreatePoint(coordinate);
+                _coordinate = _geometry.Coordinate;
+                _hitTestZone = new Envelope(_geometry.Coordinate);
+                _hitTestZone.ExpandBy(NetworkConstants.ExpansionFactor);
             }
        
         #endregion
@@ -76,27 +77,21 @@ namespace Oasis_v1._1
             set { _nodeName = value; }
         }
 
-        public double ExpansionFactor
-        {
-            get { return expansionFactor; }
-            set { expansionFactor = value; }
-        }
-
         public Coordinate Coordinate
         {
             get { return _coordinate; }
             set { _coordinate = value; }
         }
 
-        public IPoint Point
+        public IPoint Geometry
         {
             get
             {
-                return _point;
+                return _geometry;
             }
             set
             {
-                _point = value;
+                _geometry = value;
             }
         }
 
