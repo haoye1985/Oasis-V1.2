@@ -104,6 +104,8 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Network\Network Core\InfraObject.cs" />
+    <Compile Include="Network\Network Attributes\EdgeDirection.cs" />
     <Compile Include="Model\ModelConnector.cs" />
     <Compile Include="Utilities\Automation.cs" />
     <Compile Include="Forms\fmNetwork.cs">

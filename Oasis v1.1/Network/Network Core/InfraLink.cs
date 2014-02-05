@@ -12,7 +12,7 @@ using SharpMap.Data.Providers;
 
 namespace Oasis_v1._1
 {
-    public class InfraLink
+    public class InfraLink : InfraObject
     {
         #region Fields
 

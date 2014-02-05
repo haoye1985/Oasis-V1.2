@@ -9,7 +9,7 @@ using SharpMap.Data.Providers;
 
 namespace Oasis_v1._1
 {
-    public class InfraNode
+    public class InfraNode : InfraObject
     {
         #region Fields
 
