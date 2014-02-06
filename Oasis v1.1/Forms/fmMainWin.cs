@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
@@ -11,6 +12,7 @@ using SharpMap.Forms;
 using SharpMap.Layers;
 using BruTile.Web;
 using BruTile;
+using Pan.Utilities;
 
 namespace Oasis_v1._1
 {
@@ -226,6 +228,42 @@ namespace Oasis_v1._1
                 else
                 {
                     MessageBox.Show("the entire netwokr is not connected, the connected links");
+                }
+            }
+
+            private void staticToolStripMenuItem_Click(object sender, EventArgs e)
+            {
+                CoreModels.BuildStaticModel();
+            }
+
+            private void saveToolStripMenuItem_Click(object sender, EventArgs e)
+            {
+                string _Files = FileSystem.GetFileName(DialogIO.Save, "*.anet", "Asty Network file", false, "Save file");
+                if (_Files != "")
+                    NetworkIOControl.SaveNetwork(_Files);
+            }
+
+            private void graphNodeToolStripMenuItem_Click(object sender, EventArgs e)
+            {
+                if (graphNodeToolStripMenuItem.CheckState == CheckState.Unchecked)
+                {
+                    graphNodeToolStripMenuItem.CheckState = CheckState.Checked;
+                }
+                else
+                {
+                    graphNodeToolStripMenuItem.CheckState = CheckState.Unchecked;
+                }
+            }
+
+            private void graphLinkToolStripMenuItem_Click(object sender, EventArgs e)
+            {
+                if (graphLinkToolStripMenuItem.CheckState == CheckState.Unchecked)
+                {
+                    graphLinkToolStripMenuItem.CheckState = CheckState.Checked;
+                }
+                else
+                {
+                    graphLinkToolStripMenuItem.CheckState = CheckState.Unchecked;
                 }
             }
 

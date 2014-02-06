@@ -46,3 +46,7 @@ C:\Hao's Code\OASIS V1.1\Oasis v1.1\Oasis v1.1\bin\Debug\Pan.Diagram.pdb
 C:\Hao's Code\OASIS V1.1\Oasis v1.1\Oasis v1.1\obj\Debug\Oasis_v1._1.fmDesignDiagram.resources
 C:\Hao's Code\OASIS V1.1\Oasis v1.1\Oasis v1.1\obj\Debug\Oasis_v1._1.fmNetwork.resources
 C:\Hao's Code\OASIS V1.1\Oasis v1.1\Oasis v1.1\obj\Debug\Oasis_v1._1.editNetworkCreation.resources
+C:\Hao's Code\OASIS V1.1\Oasis v1.1\Oasis v1.1\bin\Debug\Pan.Optimisation.dll
+C:\Hao's Code\OASIS V1.1\Oasis v1.1\Oasis v1.1\bin\Debug\Pan.Optimisation.pdb
+C:\Hao's Code\OASIS V1.1\Oasis v1.1\Oasis v1.1\obj\Debug\Oasis_v1._1.fmGraph.resources
+C:\Hao's Code\OASIS V1.1\Oasis v1.1\Oasis v1.1\bin\Debug\NodeGraphControl.dll

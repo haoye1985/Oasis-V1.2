@@ -59,12 +59,20 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\References\GeoAPI.dll</HintPath>
     </Reference>
+    <Reference Include="Microsoft.Solver.Foundation, Version=3.0.2.10889, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\References\Microsoft.Solver.Foundation.dll</HintPath>
+    </Reference>
     <Reference Include="NetTopologySuite, Version=1.13.0.0, Culture=neutral, PublicKeyToken=f580a05016ebada1, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\References\NetTopologySuite.dll</HintPath>
     </Reference>
     <Reference Include="NetTopologySuite.IO.PostGis">
       <HintPath>..\References\NetTopologySuite.IO.PostGis.dll</HintPath>
+    </Reference>
+    <Reference Include="NodeGraphControl, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\References\NodeGraphControl.dll</HintPath>
     </Reference>
     <Reference Include="Npgsql">
       <HintPath>..\References\Npgsql.dll</HintPath>
@@ -104,9 +112,23 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Network\Network Core\InfraObject.cs" />
-    <Compile Include="Network\Network Attributes\EdgeDirection.cs" />
+    <Compile Include="Forms\fmGraph.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\fmGraph.Designer.cs">
+      <DependentUpon>fmGraph.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Network\Operation\NetworkIOControl.cs" />
+    <Compile Include="Network\InfraNetwork\LinkIntersectionList.cs" />
+    <Compile Include="Network\Interface\IGraphComponent.cs" />
+    <Compile Include="Network\Blueprint\NetworkNode.cs" />
+    <Compile Include="Network\Blueprint\NetworkLink.cs" />
+    <Compile Include="Network\Blueprint\NetworkComponent.cs" />
+    <Compile Include="Network\Attributes\EdgeDirection.cs" />
     <Compile Include="Model\ModelConnector.cs" />
+    <Compile Include="Network\InfraNetwork\NodeIntersectionList.cs" />
+    <Compile Include="Graph\TransJunctNode.cs" />
+    <Compile Include="Graph\NodeGraphFloatData.cs" />
     <Compile Include="Utilities\Automation.cs" />
     <Compile Include="Forms\fmNetwork.cs">
       <SubType>Form</SubType>
@@ -128,10 +150,10 @@
     </Compile>
     <Compile Include="Helpers\DataGridViewHelper.cs" />
     <Compile Include="Helpers\GeospatialHelper.cs" />
-    <Compile Include="Network\Network Attributes\NetworkConstants.cs" />
-    <Compile Include="Network\Network Core\InfraLinksCollection.cs" />
-    <Compile Include="Network\Network Core\InfraNodesCollection.cs" />
-    <Compile Include="Network\Network Operators\NetworkUpdator.cs" />
+    <Compile Include="Network\Attributes\NetworkConstants.cs" />
+    <Compile Include="Network\InfraNetwork\InfraLinksCollection.cs" />
+    <Compile Include="Network\InfraNetwork\InfraNodesCollection.cs" />
+    <Compile Include="Network\Operation\NetworkUpdator.cs" />
     <Compile Include="Database\DBConnection.cs" />
     <Compile Include="Forms\fmSetting.cs">
       <SubType>Form</SubType>
@@ -151,12 +173,12 @@
     <Compile Include="Forms\fmLink.Designer.cs">
       <DependentUpon>fmLink.cs</DependentUpon>
     </Compile>
-    <Compile Include="Network\Network Visualiser\NetworkRenderingStyle.cs" />
+    <Compile Include="Network\Operation\NetworkRenderingStyle.cs" />
     <Compile Include="Model\CoreModel.cs" />
-    <Compile Include="Network\Network Operators\NetworkAnalysis.cs" />
-    <Compile Include="Network\Network Attributes\NetworkType.cs" />
-    <Compile Include="Network\Network Core\InfraNetworksCollection.cs" />
-    <Compile Include="Network\Network Operators\NetworkDesign.cs" />
+    <Compile Include="Network\Operation\NetworkAnalysis.cs" />
+    <Compile Include="Network\Attributes\NetworkType.cs" />
+    <Compile Include="Network\InfraNetwork\InfraNetworksCollection.cs" />
+    <Compile Include="Network\Operation\NetworkDesign.cs" />
     <Compile Include="Forms\fmDatabase.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -177,10 +199,10 @@
     <Compile Include="Forms\fmMainWin.Designer.cs">
       <DependentUpon>fmMainWin.cs</DependentUpon>
     </Compile>
-    <Compile Include="Network\Network Visualiser\NetworkObjectVisualiser.cs" />
-    <Compile Include="Network\Network Core\InfraNetwork.cs" />
-    <Compile Include="Network\Network Core\InfraLink.cs" />
-    <Compile Include="Network\Network Core\InfraNode.cs" />
+    <Compile Include="Network\Operation\NetworkObjectVisualiser.cs" />
+    <Compile Include="Network\InfraNetwork\InfraNetwork.cs" />
+    <Compile Include="Network\InfraNetwork\InfraLink.cs" />
+    <Compile Include="Network\InfraNetwork\InfraNode.cs" />
     <Compile Include="Forms\fmNode.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -192,11 +214,14 @@
     <Compile Include="Database\PostGisMetaItem.cs" />
     <Compile Include="Utilities\Program.cs" />
     <Compile Include="Helpers\ProjectionHelper.cs" />
-    <Compile Include="Network\Network Operators\NetworkObjectCreation.cs" />
+    <Compile Include="Network\Operation\NetworkObjectCreation.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Utilities\States.cs" />
     <Compile Include="Utilities\Setting.cs" />
     <Compile Include="Utilities\ZoomExtent.cs" />
+    <EmbeddedResource Include="Forms\fmGraph.resx">
+      <DependentUpon>fmGraph.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\fmDesignDiagram.resx">
       <DependentUpon>fmDesignDiagram.cs</DependentUpon>
     </EmbeddedResource>
@@ -257,6 +282,10 @@
     <ProjectReference Include="..\Pan\Pan.Docks\Pan.Docks.csproj">
       <Project>{d678aef8-5303-4d8a-9756-51a7db0c6a5b}</Project>
       <Name>Pan.Docks</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Pan\Pan.Optimisation\Pan.Optimisation.csproj">
+      <Project>{85768579-fdfb-4d1c-8e74-40b718256140}</Project>
+      <Name>Pan.Optimisation</Name>
     </ProjectReference>
     <ProjectReference Include="..\Pan\Pan.Settings\Pan.Settings.csproj">
       <Project>{1346e36d-d5e1-478a-8980-badaefa565f4}</Project>

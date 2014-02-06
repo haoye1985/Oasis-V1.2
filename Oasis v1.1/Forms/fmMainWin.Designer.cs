@@ -85,8 +85,12 @@
             this.linkCreationToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.checkNetworkFeaturesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.featureConnectivityAnalysisToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.graphToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.graphNodeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.coordinateCaptureToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.staticToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.dynamicModelToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.settingToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
@@ -98,6 +102,7 @@
             this.toolStripButton6 = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator7 = new System.Windows.Forms.ToolStripSeparator();
             this.dockPanel1 = new WeifenLuo.WinFormsUI.Docking.DockPanel();
+            this.graphLinkToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.toolStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -111,6 +116,7 @@
             this.layersToolStripMenuItem,
             this.databaseToolStripMenuItem,
             this.networkToolStripMenuItem,
+            this.graphToolStripMenuItem,
             this.toolToolStripMenuItem,
             this.settingToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
@@ -175,6 +181,7 @@
             this.saveToolStripMenuItem.Name = "saveToolStripMenuItem";
             this.saveToolStripMenuItem.Size = new System.Drawing.Size(251, 28);
             this.saveToolStripMenuItem.Text = "Save";
+            this.saveToolStripMenuItem.Click += new System.EventHandler(this.saveToolStripMenuItem_Click);
             // 
             // saveAsToolStripMenuItem
             // 
@@ -417,19 +424,51 @@
             this.featureConnectivityAnalysisToolStripMenuItem.Text = "Feature Connectivity Analysis";
             this.featureConnectivityAnalysisToolStripMenuItem.Click += new System.EventHandler(this.featureConnectivityAnalysisToolStripMenuItem_Click);
             // 
+            // graphToolStripMenuItem
+            // 
+            this.graphToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.graphNodeToolStripMenuItem,
+            this.graphLinkToolStripMenuItem});
+            this.graphToolStripMenuItem.Name = "graphToolStripMenuItem";
+            this.graphToolStripMenuItem.Size = new System.Drawing.Size(77, 27);
+            this.graphToolStripMenuItem.Text = "Graph";
+            // 
+            // graphNodeToolStripMenuItem
+            // 
+            this.graphNodeToolStripMenuItem.Name = "graphNodeToolStripMenuItem";
+            this.graphNodeToolStripMenuItem.Size = new System.Drawing.Size(187, 28);
+            this.graphNodeToolStripMenuItem.Text = "Graph Node";
+            this.graphNodeToolStripMenuItem.Click += new System.EventHandler(this.graphNodeToolStripMenuItem_Click);
+            // 
             // toolToolStripMenuItem
             // 
             this.toolToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.coordinateCaptureToolStripMenuItem});
             this.toolToolStripMenuItem.Name = "toolToolStripMenuItem";
-            this.toolToolStripMenuItem.Size = new System.Drawing.Size(91, 27);
-            this.toolToolStripMenuItem.Text = "ToolBox";
+            this.toolToolStripMenuItem.Size = new System.Drawing.Size(76, 27);
+            this.toolToolStripMenuItem.Text = "Model";
             // 
             // coordinateCaptureToolStripMenuItem
             // 
+            this.coordinateCaptureToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.staticToolStripMenuItem,
+            this.dynamicModelToolStripMenuItem});
             this.coordinateCaptureToolStripMenuItem.Name = "coordinateCaptureToolStripMenuItem";
-            this.coordinateCaptureToolStripMenuItem.Size = new System.Drawing.Size(252, 28);
-            this.coordinateCaptureToolStripMenuItem.Text = "Coordinate Capture";
+            this.coordinateCaptureToolStripMenuItem.Size = new System.Drawing.Size(248, 28);
+            this.coordinateCaptureToolStripMenuItem.Text = "Input Output Model";
+            // 
+            // staticToolStripMenuItem
+            // 
+            this.staticToolStripMenuItem.Name = "staticToolStripMenuItem";
+            this.staticToolStripMenuItem.Size = new System.Drawing.Size(215, 28);
+            this.staticToolStripMenuItem.Text = "Static Model";
+            this.staticToolStripMenuItem.Click += new System.EventHandler(this.staticToolStripMenuItem_Click);
+            // 
+            // dynamicModelToolStripMenuItem
+            // 
+            this.dynamicModelToolStripMenuItem.Name = "dynamicModelToolStripMenuItem";
+            this.dynamicModelToolStripMenuItem.Size = new System.Drawing.Size(215, 28);
+            this.dynamicModelToolStripMenuItem.Text = "Dynamic Model";
             // 
             // settingToolStripMenuItem
             // 
@@ -580,6 +619,13 @@
             this.dockPanel1.Skin = dockPanelSkin1;
             this.dockPanel1.TabIndex = 2;
             // 
+            // graphLinkToolStripMenuItem
+            // 
+            this.graphLinkToolStripMenuItem.Name = "graphLinkToolStripMenuItem";
+            this.graphLinkToolStripMenuItem.Size = new System.Drawing.Size(187, 28);
+            this.graphLinkToolStripMenuItem.Text = "Graph Link";
+            this.graphLinkToolStripMenuItem.Click += new System.EventHandler(this.graphLinkToolStripMenuItem_Click);
+            // 
             // MainWin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
@@ -657,6 +703,11 @@
         public System.Windows.Forms.ToolStripMenuItem checkNetworkFeaturesToolStripMenuItem;
         public System.Windows.Forms.ToolStripMenuItem tsBuilderMap;
         public System.Windows.Forms.ToolStripMenuItem featureConnectivityAnalysisToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem staticToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem graphToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem dynamicModelToolStripMenuItem;
+        public System.Windows.Forms.ToolStripMenuItem graphNodeToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem graphLinkToolStripMenuItem;
     }
 }
 

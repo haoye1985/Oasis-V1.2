@@ -13,6 +13,7 @@ namespace Oasis_v1._1
         public static fmConsole dockConsole;
         public static fmDesignDiagram dockDesignDiagram;
         public static fmNetwork dockNetwork;
+        public static fmGraph dockGraph;
 
         public static void Initialise()
         {
@@ -27,6 +28,7 @@ namespace Oasis_v1._1
                 dockNetwork = new fmNetwork(),
                 dockNode = new fmNode(),
                 dockLink = new fmLink(),
+                dockGraph = new fmGraph()
             };
             dockManager.AddDocks(_DockContents);
 
