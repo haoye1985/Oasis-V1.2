@@ -36,7 +36,6 @@ C:\Hao's Code\OASIS V1.1\Oasis v1.1\Oasis v1.1\bin\Debug\ObjectListView.xml
 C:\Hao's Code\OASIS V1.1\Oasis v1.1\Oasis v1.1\bin\Debug\Pan.Diagram.dll
 C:\Hao's Code\OASIS V1.1\Oasis v1.1\Oasis v1.1\bin\Debug\Prodige.Drawing.dll
 C:\Hao's Code\OASIS V1.1\Oasis v1.1\Oasis v1.1\bin\Debug\Pan.Diagram.pdb
-C:\Hao's Code\OASIS V1.1\Oasis v1.1\Oasis v1.1\obj\Debug\Oasis_v1._1.editNetworkCreation.resources
 C:\Hao's Code\OASIS V1.1\Oasis v1.1\Oasis v1.1\bin\Debug\Pan.Optimisation.dll
 C:\Hao's Code\OASIS V1.1\Oasis v1.1\Oasis v1.1\bin\Debug\Pan.Optimisation.pdb
 C:\Hao's Code\OASIS V1.1\Oasis v1.1\Oasis v1.1\bin\Debug\NodeGraphControl.dll
@@ -50,3 +49,5 @@ C:\Hao's Code\OASIS V1.1\Oasis v1.1\Oasis v1.1\obj\Debug\Oasis_v1._1.DockMap.res
 C:\Hao's Code\OASIS V1.1\Oasis v1.1\Oasis v1.1\obj\Debug\Oasis_v1._1.DockMainWin.resources
 C:\Hao's Code\OASIS V1.1\Oasis v1.1\Oasis v1.1\obj\Debug\Oasis_v1._1.DockNode.resources
 C:\Hao's Code\OASIS V1.1\Oasis v1.1\Oasis v1.1\obj\Debug\Oasis_v1._1.DockLink.resources
+C:\Hao's Code\OASIS V1.1\Oasis v1.1\Oasis v1.1\obj\Debug\Oasis_v1._1.SubNetCreation.resources
+C:\Hao's Code\OASIS V1.1\Oasis v1.1\Oasis v1.1\obj\Debug\Oasis_v1._1.SubNetworkInf.resources

@@ -66,6 +66,8 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\References\Microsoft.Solver.Foundation.dll</HintPath>
     </Reference>
+    <Reference Include="Microsoft.VisualBasic" />
+    <Reference Include="Microsoft.VisualBasic.PowerPacks.Vs, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
     <Reference Include="NetTopologySuite, Version=1.13.0.0, Culture=neutral, PublicKeyToken=f580a05016ebada1, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\References\NetTopologySuite.dll</HintPath>
@@ -124,6 +126,7 @@
     <Compile Include="Cache\GraphStates.cs" />
     <Compile Include="Graph\GraphOperation\GraphDesignHelper.cs" />
     <Compile Include="Graph\GraphOperation\GraphDesign.cs" />
+    <Compile Include="Network\Tools\NetworkStructureTool.cs" />
     <Compile Include="Network\Tools\NetworkSerialiser.cs" />
     <Compile Include="Cache\InOut.cs" />
     <Compile Include="Network\InfraNetwork\LinkIntersectionList.cs" />
@@ -138,6 +141,12 @@
     <Compile Include="Graph\Attribute\NodeGraphFloatData.cs" />
     <Compile Include="Graph\Attribute\TransNetworkDataTypeFloat.cs" />
     <Compile Include="Graph\GraphCore\TransLink.cs" />
+    <Compile Include="Forms\SubNetworkInf.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\SubNetworkInf.Designer.cs">
+      <DependentUpon>SubNetworkInf.cs</DependentUpon>
+    </Compile>
     <Compile Include="Utilities\Automation.cs" />
     <Compile Include="Forms\DockNetwork.cs">
       <SubType>Form</SubType>
@@ -231,6 +240,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\SubNetCreation.resx">
       <DependentUpon>SubNetCreation.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\SubNetworkInf.resx">
+      <DependentUpon>SubNetworkInf.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\SubSetting.resx">
       <DependentUpon>SubSetting.cs</DependentUpon>
