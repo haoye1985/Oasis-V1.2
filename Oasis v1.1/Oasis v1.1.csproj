@@ -126,6 +126,7 @@
     <Compile Include="Cache\GraphStates.cs" />
     <Compile Include="Graph\GraphOperation\GraphDesignHelper.cs" />
     <Compile Include="Graph\GraphOperation\GraphDesign.cs" />
+    <Compile Include="Cache\MessageMaintain.cs" />
     <Compile Include="Network\Tools\NetworkStructureTool.cs" />
     <Compile Include="Network\Tools\NetworkSerialiser.cs" />
     <Compile Include="Cache\InOut.cs" />
@@ -228,7 +229,7 @@
     <Compile Include="Helpers\ProjectionHelper.cs" />
     <Compile Include="Network\Operation\NetworkObjectCreation.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Cache\NetworkStates.cs" />
+    <Compile Include="Cache\States.cs" />
     <Compile Include="Cache\Setting.cs" />
     <Compile Include="Utilities\ZoomExtent.cs" />
     <Compile Include="Cache\WindowState.cs" />
@@ -288,10 +289,6 @@
     <None Include="Utilities\App.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Pan\Pan.Diagramer\Pan.Diagramer.csproj">
-      <Project>{fc042f47-3373-4524-806c-95f6c93bbd08}</Project>
-      <Name>Pan.Diagramer</Name>
-    </ProjectReference>
     <ProjectReference Include="..\Pan\Pan.Docks\Pan.Docks.csproj">
       <Project>{d678aef8-5303-4d8a-9756-51a7db0c6a5b}</Project>
       <Name>Pan.Docks</Name>

@@ -5,8 +5,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Oasis v1.1", "Oasis v1.1\Oa
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pan.Docks", "Pan\Pan.Docks\Pan.Docks.csproj", "{D678AEF8-5303-4D8A-9756-51A7DB0C6A5B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pan.Diagramer", "Pan\Pan.Diagramer\Pan.Diagramer.csproj", "{FC042F47-3373-4524-806C-95F6C93BBD08}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pan.Utilities", "Pan\Pan.Utilities\Pan.Utilities.csproj", "{80D631D2-4A4A-41CE-A11D-92E735422D8B}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pan.Settings", "Pan\Pan.Settings\Pan.Settings.csproj", "{1346E36D-D5E1-478A-8980-BADAEFA565F4}"
@@ -33,10 +31,6 @@ Global
 		{D678AEF8-5303-4D8A-9756-51A7DB0C6A5B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D678AEF8-5303-4D8A-9756-51A7DB0C6A5B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D678AEF8-5303-4D8A-9756-51A7DB0C6A5B}.Release|Any CPU.Build.0 = Release|Any CPU
-		{FC042F47-3373-4524-806C-95F6C93BBD08}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{FC042F47-3373-4524-806C-95F6C93BBD08}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{FC042F47-3373-4524-806C-95F6C93BBD08}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{FC042F47-3373-4524-806C-95F6C93BBD08}.Release|Any CPU.Build.0 = Release|Any CPU
 		{80D631D2-4A4A-41CE-A11D-92E735422D8B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{80D631D2-4A4A-41CE-A11D-92E735422D8B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{80D631D2-4A4A-41CE-A11D-92E735422D8B}.Release|Any CPU.ActiveCfg = Release|Any CPU
