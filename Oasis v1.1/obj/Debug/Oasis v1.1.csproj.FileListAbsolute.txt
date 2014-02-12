@@ -36,7 +36,6 @@ C:\Hao's Code\OASIS V1.1\Oasis v1.1\Oasis v1.1\bin\Debug\Pan.Diagram.pdb
 C:\Hao's Code\OASIS V1.1\Oasis v1.1\Oasis v1.1\bin\Debug\Pan.Optimisation.dll
 C:\Hao's Code\OASIS V1.1\Oasis v1.1\Oasis v1.1\bin\Debug\Pan.Optimisation.pdb
 C:\Hao's Code\OASIS V1.1\Oasis v1.1\Oasis v1.1\bin\Debug\NodeGraphControl.dll
-C:\Hao's Code\OASIS V1.1\Oasis v1.1\Oasis v1.1\bin\Debug\Aga.Controls.dll
 C:\Hao's Code\OASIS V1.1\Oasis v1.1\Oasis v1.1\obj\Debug\Oasis_v1._1.DockGraph.resources
 C:\Hao's Code\OASIS V1.1\Oasis v1.1\Oasis v1.1\obj\Debug\Oasis_v1._1.DockNetwork.resources
 C:\Hao's Code\OASIS V1.1\Oasis v1.1\Oasis v1.1\obj\Debug\Oasis_v1._1.SubSetting.resources

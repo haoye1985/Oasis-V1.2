@@ -32,9 +32,6 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Aga.Controls">
-      <HintPath>..\References\Aga.Controls.dll</HintPath>
-    </Reference>
     <Reference Include="Asty.Core">
       <HintPath>..\..\..\..\OASIS V1.1\Oasis v1.1\References\Asty.Core.dll</HintPath>
     </Reference>
@@ -135,7 +132,6 @@
     <Compile Include="Network\Data Model\NetworkNode.cs" />
     <Compile Include="Network\Data Model\NetworkLink.cs" />
     <Compile Include="Network\Data Model\NetworkComponent.cs" />
-    <Compile Include="Network\Attributes\EdgeDirection.cs" />
     <Compile Include="Model\ModelConnector.cs" />
     <Compile Include="Network\InfraNetwork\NodeIntersectionList.cs" />
     <Compile Include="Graph\GraphCore\TransNode.cs" />
@@ -148,6 +144,7 @@
     <Compile Include="Forms\SubNetworkInf.Designer.cs">
       <DependentUpon>SubNetworkInf.cs</DependentUpon>
     </Compile>
+    <Compile Include="Network\Visualisation\RiskRender.cs" />
     <Compile Include="Utilities\Automation.cs" />
     <Compile Include="Forms\DockNetwork.cs">
       <SubType>Form</SubType>
@@ -186,7 +183,7 @@
     <Compile Include="Forms\DockLink.Designer.cs">
       <DependentUpon>DockLink.cs</DependentUpon>
     </Compile>
-    <Compile Include="Network\Operation\NetworkRenderingStyle.cs" />
+    <Compile Include="Network\Visualisation\NetworkRenderStyle.cs" />
     <Compile Include="Model\CoreModel.cs" />
     <Compile Include="Network\Tools\NetworkAnalysis.cs" />
     <Compile Include="Network\Attributes\NetworkType.cs" />
@@ -212,7 +209,7 @@
     <Compile Include="Forms\DockMainWin.Designer.cs">
       <DependentUpon>DockMainWin.cs</DependentUpon>
     </Compile>
-    <Compile Include="Network\Operation\NetworkObjectVisualiser.cs" />
+    <Compile Include="Network\Visualisation\NetworkLayerVisualiser.cs" />
     <Compile Include="Network\InfraNetwork\InfraNetwork.cs" />
     <Compile Include="Network\InfraNetwork\InfraLink.cs" />
     <Compile Include="Network\InfraNetwork\InfraNode.cs" />
