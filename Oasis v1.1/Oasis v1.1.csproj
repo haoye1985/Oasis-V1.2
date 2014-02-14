@@ -114,16 +114,18 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Cache\Automation.cs" />
     <Compile Include="Forms\DockGraph.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Forms\DockGraph.Designer.cs">
       <DependentUpon>DockGraph.cs</DependentUpon>
     </Compile>
-    <Compile Include="Cache\GraphStates.cs" />
+    <Compile Include="Cache\StateSpace\GraphStates.cs" />
     <Compile Include="Graph\GraphOperation\GraphDesignHelper.cs" />
     <Compile Include="Graph\GraphOperation\GraphDesign.cs" />
-    <Compile Include="Cache\MessageMaintain.cs" />
+    <Compile Include="Cache\Messager.cs" />
+    <Compile Include="Cache\Maintainance.cs" />
     <Compile Include="Network\Tools\NetworkStructureTool.cs" />
     <Compile Include="Network\Tools\NetworkSerialiser.cs" />
     <Compile Include="Cache\InOut.cs" />
@@ -145,7 +147,6 @@
       <DependentUpon>SubNetworkInf.cs</DependentUpon>
     </Compile>
     <Compile Include="Network\Visualisation\RiskRender.cs" />
-    <Compile Include="Utilities\Automation.cs" />
     <Compile Include="Forms\DockNetwork.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -226,10 +227,10 @@
     <Compile Include="Helpers\ProjectionHelper.cs" />
     <Compile Include="Network\Operation\NetworkObjectCreation.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Cache\States.cs" />
+    <Compile Include="Cache\StateSpace\States.cs" />
     <Compile Include="Cache\Setting.cs" />
     <Compile Include="Utilities\ZoomExtent.cs" />
-    <Compile Include="Cache\WindowState.cs" />
+    <Compile Include="Cache\StateSpace\WindowState.cs" />
     <EmbeddedResource Include="Forms\DockGraph.resx">
       <DependentUpon>DockGraph.cs</DependentUpon>
     </EmbeddedResource>
