@@ -112,9 +112,18 @@
     <Reference Include="WeifenLuo.WinFormsUI.Docking">
       <HintPath>..\References\WeifenLuo.WinFormsUI.Docking.dll</HintPath>
     </Reference>
+    <Reference Include="ZedGraph">
+      <HintPath>..\References\ZedGraph.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Cache\Automation.cs" />
+    <Compile Include="Forms\DockCharts.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\DockCharts.Designer.cs">
+      <DependentUpon>DockCharts.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\DockGraph.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -231,6 +240,9 @@
     <Compile Include="Cache\Setting.cs" />
     <Compile Include="Utilities\ZoomExtent.cs" />
     <Compile Include="Cache\StateSpace\WindowState.cs" />
+    <EmbeddedResource Include="Forms\DockCharts.resx">
+      <DependentUpon>DockCharts.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\DockGraph.resx">
       <DependentUpon>DockGraph.cs</DependentUpon>
     </EmbeddedResource>
