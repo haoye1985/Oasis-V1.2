@@ -118,11 +118,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Cache\Automation.cs" />
-    <Compile Include="Forms\DockCharts.cs">
+    <Compile Include="Graph\GraphCore\FloatDataType.cs" />
+    <Compile Include="Forms\DockChart.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\DockCharts.Designer.cs">
-      <DependentUpon>DockCharts.cs</DependentUpon>
+    <Compile Include="Forms\DockChart.Designer.cs">
+      <DependentUpon>DockChart.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\DockGraph.cs">
       <SubType>Form</SubType>
@@ -135,6 +136,7 @@
     <Compile Include="Graph\GraphOperation\GraphDesign.cs" />
     <Compile Include="Cache\Messager.cs" />
     <Compile Include="Cache\Maintainance.cs" />
+    <Compile Include="Graph\GraphCore\IOPConnector.cs" />
     <Compile Include="Network\Tools\NetworkStructureTool.cs" />
     <Compile Include="Network\Tools\NetworkSerialiser.cs" />
     <Compile Include="Cache\InOut.cs" />
@@ -146,8 +148,6 @@
     <Compile Include="Model\ModelConnector.cs" />
     <Compile Include="Network\InfraNetwork\NodeIntersectionList.cs" />
     <Compile Include="Graph\GraphCore\TransNode.cs" />
-    <Compile Include="Graph\Attribute\NodeGraphFloatData.cs" />
-    <Compile Include="Graph\Attribute\TransNetworkDataTypeFloat.cs" />
     <Compile Include="Graph\GraphCore\TransLink.cs" />
     <Compile Include="Forms\SubNetworkInf.cs">
       <SubType>Form</SubType>
@@ -232,6 +232,9 @@
     <Compile Include="Database\DBPostGIS.cs" />
     <Compile Include="Database\DBPostGisHelper.cs" />
     <Compile Include="Database\DBPostGisMetaItem.cs" />
+    <Compile Include="Graph\GraphCore\OPConnector.cs" />
+    <Compile Include="Graph\GraphCore\TransportData.cs" />
+    <Compile Include="Graph\GraphCore\TransportDataType.cs" />
     <Compile Include="Utilities\Program.cs" />
     <Compile Include="Helpers\ProjectionHelper.cs" />
     <Compile Include="Network\Operation\NetworkObjectCreation.cs" />
@@ -240,8 +243,8 @@
     <Compile Include="Cache\Setting.cs" />
     <Compile Include="Utilities\ZoomExtent.cs" />
     <Compile Include="Cache\StateSpace\WindowState.cs" />
-    <EmbeddedResource Include="Forms\DockCharts.resx">
-      <DependentUpon>DockCharts.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\DockChart.resx">
+      <DependentUpon>DockChart.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\DockGraph.resx">
       <DependentUpon>DockGraph.cs</DependentUpon>

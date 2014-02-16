@@ -58,7 +58,7 @@ namespace Oasis_v1._1
                     Envelope geom = GeometryTransform.TransformBox(new Envelope(-9.205626, -9.123736, 38.690993, 38.740837), mathTransform);
                     mapbox.Map.ZoomToBox(geom);
                     mapbox.Map.Zoom = 20000;
-                    mapbox.Refresh();
+                    mapbox.Invalidate();
                 }
                 catch
                 {
