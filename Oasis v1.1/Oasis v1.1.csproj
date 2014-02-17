@@ -137,6 +137,7 @@
     <Compile Include="Cache\Messager.cs" />
     <Compile Include="Cache\Maintainance.cs" />
     <Compile Include="Graph\GraphCore\IOPConnector.cs" />
+    <Compile Include="Network\Operation\NetworkDegree.cs" />
     <Compile Include="Network\Tools\NetworkStructureTool.cs" />
     <Compile Include="Network\Tools\NetworkSerialiser.cs" />
     <Compile Include="Cache\InOut.cs" />
