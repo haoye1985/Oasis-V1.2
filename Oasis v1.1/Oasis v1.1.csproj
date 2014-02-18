@@ -177,12 +177,6 @@
     <Compile Include="Network\InfraNetwork\InfraNodesCollection.cs" />
     <Compile Include="Network\Operation\NetworkUpdator.cs" />
     <Compile Include="Database\DBConnection.cs" />
-    <Compile Include="Forms\SubSetting.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\SubSetting.Designer.cs">
-      <DependentUpon>SubSetting.cs</DependentUpon>
-    </Compile>
     <Compile Include="Forms\DockConsole.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -236,6 +230,12 @@
     <Compile Include="Graph\GraphCore\OPConnector.cs" />
     <Compile Include="Graph\GraphCore\TransportData.cs" />
     <Compile Include="Graph\GraphCore\TransportDataType.cs" />
+    <Compile Include="Forms\SubSetting.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\SubSetting.Designer.cs">
+      <DependentUpon>SubSetting.cs</DependentUpon>
+    </Compile>
     <Compile Include="Utilities\Program.cs" />
     <Compile Include="Helpers\ProjectionHelper.cs" />
     <Compile Include="Network\Operation\NetworkObjectCreation.cs" />
@@ -258,9 +258,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\SubNetworkInf.resx">
       <DependentUpon>SubNetworkInf.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\SubSetting.resx">
-      <DependentUpon>SubSetting.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\DockConsole.resx">
       <DependentUpon>DockConsole.cs</DependentUpon>
@@ -289,6 +286,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Forms\SubSetting.resx">
+      <DependentUpon>SubSetting.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
