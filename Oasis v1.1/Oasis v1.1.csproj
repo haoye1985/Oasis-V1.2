@@ -236,6 +236,7 @@
     <Compile Include="Forms\SubSetting.Designer.cs">
       <DependentUpon>SubSetting.cs</DependentUpon>
     </Compile>
+    <Compile Include="ShapeFileReader.cs" />
     <Compile Include="Utilities\Program.cs" />
     <Compile Include="Helpers\ProjectionHelper.cs" />
     <Compile Include="Network\Operation\NetworkObjectCreation.cs" />
