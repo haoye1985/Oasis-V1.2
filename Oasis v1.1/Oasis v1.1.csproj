@@ -137,6 +137,7 @@
     <Compile Include="Cache\Messager.cs" />
     <Compile Include="Cache\Maintainance.cs" />
     <Compile Include="Graph\GraphCore\IOPConnector.cs" />
+    <Compile Include="NetworkConstructor.cs" />
     <Compile Include="Network\Operation\NetworkDesign2.cs" />
     <Compile Include="Network\Operation\NetworkDegree.cs" />
     <Compile Include="Network\Tools\NetworkStructureTool.cs" />
@@ -144,9 +145,9 @@
     <Compile Include="Cache\InOut.cs" />
     <Compile Include="Network\InfraNetwork\LinkIntersectionList.cs" />
     <Compile Include="Graph\Interface\IGraphComponent.cs" />
-    <Compile Include="Network\Data Model\NetworkNode.cs" />
-    <Compile Include="Network\Data Model\NetworkLink.cs" />
-    <Compile Include="Network\Data Model\NetworkComponent.cs" />
+    <Compile Include="Network\Data Model\GeoNode.cs" />
+    <Compile Include="Network\Data Model\GeoLink.cs" />
+    <Compile Include="Network\Data Model\GeoComponent.cs" />
     <Compile Include="Model\ModelConnector.cs" />
     <Compile Include="Network\InfraNetwork\NodeIntersectionList.cs" />
     <Compile Include="Graph\GraphCore\TransNode.cs" />
